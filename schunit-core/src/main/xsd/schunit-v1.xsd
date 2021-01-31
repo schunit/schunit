@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2021 Erlend Klakegg Bergheim
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="urn:fdc:schunit.com:2018:v1" xmlns="urn:fdc:schunit.com:2018:v1">
+
+    <!-- Tests -->
+
+    <xs:element name="Tests" type="TestsType"/>
+
+    <xs:complexType name="TestsType">
+        <xs:sequence>
+            <xs:element name="Context" type="xs:token" minOccurs="0"/>
+            <xs:element name="Description" type="xs:string" minOccurs="0"/>
+            <xs:element name="Scope" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+
+            <xs:element ref="Test" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <!-- Test -->
+
+    <xs:element name="Test" type="TestType"/>
+
+    <xs:complexType name="TestType">
+        <xs:sequence>
+            <xs:element name="Description" type="xs:string" minOccurs="0"/>
+            <xs:element name="Scope" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Success" type="ExpectationType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Trigger" type="ExpectationType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:any namespace="##other" processContents="lax"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string"/>
+        <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <xs:complexType name="ExpectationType">
+        <xs:simpleContent>
+            <xs:extension base="xs:token">
+                <xs:attribute name="count" type="xs:int" default="1"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

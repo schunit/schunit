@@ -1,0 +1,3403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns='http://ns.saxonica.com/xslt/export' xmlns:fn='http://www.w3.org/2005/xpath-functions' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:vv='http://saxon.sf.net/generated-variable' xmlns:java-type='http://saxon.sf.net/java-type' when='2020-01-29T20:26:54.699Z' id='0' version='10' packageVersion='1' saxonVersion='9.9.1.6' target='HE' targetVersion='1' relocatable='true' implicit='true'>
+ <co id='0' binds=''>
+  <globalParam name='Q{}include-xlink' type='item()*' line='139' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='139' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='1' binds='0 1 1 1 1 2 1 2 1 3 1 1 1 1 2 1 4 1 1 1 1 1 2 1 4 1 1 1 1 5 1 1 1 1 6 1 1 1 1 4 1 1 1 1 7 1 1 1 1 2 1 2 1 1'>
+  <mode name='Q{http://www.schematron.com/namespace/dsdl}go' onNo='TC' flags='W' patternSlots='0'>
+   <templateRule prec='0' prio='1.0' seq='15' rank='3' minImp='0' slots='6' flags='s' line='1163' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.withPredicate>
+      <p.withPredicate>
+       <p.withPredicate>
+        <p.withPredicate>
+         <p.nodeTest test='element()'/>
+         <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1163' name='attribute' nodeTest='attribute(Q{http://www.w3.org/1999/xlink}href)'/>
+        </p.withPredicate>
+        <fn ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1163' name='empty'>
+         <filter flags='b'>
+          <axis name='parent' nodeTest='element()'/>
+          <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+           <cast as='xs:string' emptiable='1'>
+            <attVal name='Q{http://www.w3.org/1999/xlink}type' chk='0'/>
+           </cast>
+           <str val='complex'/>
+          </vc>
+         </filter>
+        </fn>
+       </p.withPredicate>
+       <or ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1163' op='or'>
+        <fn name='empty'>
+         <axis name='attribute' nodeTest='attribute(Q{http://www.w3.org/1999/xlink}type)'/>
+        </fn>
+        <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <cast as='xs:string' emptiable='1'>
+          <attVal name='Q{http://www.w3.org/1999/xlink}type' chk='0'/>
+         </cast>
+         <str val='simple'/>
+        </vc>
+       </or>
+      </p.withPredicate>
+      <vc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1163' op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+       <cast as='xs:string' emptiable='1'>
+        <attVal name='Q{http://www.w3.org/1999/xlink}show' chk='0'/>
+       </cast>
+       <str val='embed'/>
+      </vc>
+     </p.withPredicate>
+     <or ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1163' op='or'>
+      <fn name='empty'>
+       <axis name='attribute' nodeTest='attribute(Q{http://www.w3.org/1999/xlink}actuate)'/>
+      </fn>
+      <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+       <cast as='xs:string' emptiable='1'>
+        <attVal name='Q{http://www.w3.org/1999/xlink}actuate' chk='0'/>
+       </cast>
+       <str val='onLoad'/>
+      </vc>
+     </or>
+    </p.withPredicate>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1166' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='1168' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{http://www.w3.org/1999/xlink}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='1169'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='1170' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='1173'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-xlink' bSlot='0'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='1175' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='1176' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='1'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='1183' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='1184'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in XLink embedding&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;link&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='1192' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='1195' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='2'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='element()'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='element()'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='1199' name='Q{}fragment-id' slot='1'/>
+        <let line='1201' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='1202'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='1205'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='1209'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='1213' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='element()'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='element()'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <sequence line='1214'>
+             <choose>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </fn>
+              <message line='1217'>
+               <sequence role='select'>
+                <valueOf>
+                 <str val='Unable to locate id attribute: '/>
+                </valueOf>
+                <valueOf>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+                 </convert>
+                </valueOf>
+               </sequence>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <applyT line='1221' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='3'>
+              <first role='select'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </first>
+             </applyT>
+            </sequence>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='1227' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='1229' var='Q{}theFragment_2' as='element()*' slot='5' eval='3'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='element()'/>
+          </slash>
+          <sequence line='1231'>
+           <choose>
+            <fn name='empty'>
+             <varRef name='Q{}theDocument_2' slot='4'/>
+            </fn>
+            <message line='1234'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to open referenced included file: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <choose line='1238'>
+            <fn name='empty'>
+             <varRef name='Q{}theFragment_2' slot='5'/>
+            </fn>
+            <message line='1241'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to locate id attribute: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <applyT line='1245' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='4'>
+            <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+           </applyT>
+          </sequence>
+         </let>
+        </let>
+       </choose>
+       <procInst line='1252'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='1253' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{http://www.w3.org/1999/xlink}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='2' rank='2' minImp='0' slots='0' flags='s' line='164' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}assert)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='164' name='attribute' nodeTest='attribute(Q{}test)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='165'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='5'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}test)?'>
+       <axis line='166' name='attribute' nodeTest='attribute(Q{}test)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad assert: '/>
+      </withParam>
+     </callT>
+     <copy line='171' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='172' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='6'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='5' rank='2' minImp='0' slots='0' flags='s' line='201' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}value-of)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='201' name='attribute' nodeTest='attribute(Q{}select)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='202'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='7'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}select)?'>
+       <axis line='203' name='attribute' nodeTest='attribute(Q{}select)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad value-of: '/>
+      </withParam>
+     </callT>
+     <copy line='208' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='209' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='8'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='13' rank='1' minImp='0' slots='6' flags='s' line='919' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0}ref)'/>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='923' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='925' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='926'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='927' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='930'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-crdl' bSlot='9'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='932' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='933' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='10'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='940' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='941'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in CRDL include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='948' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='952' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='11'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='element()'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='element()'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='956' name='Q{}fragment-id' slot='1'/>
+        <let line='958' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='959'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='962'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='966'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='970' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='element()'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='element()'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <sequence line='972'>
+             <choose>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </fn>
+              <message line='975'>
+               <sequence role='select'>
+                <valueOf>
+                 <str val='Unable to locate id attribute: '/>
+                </valueOf>
+                <valueOf>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <attVal name='Q{}href' chk='0'/>
+                 </convert>
+                </valueOf>
+               </sequence>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <applyT line='979' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='12'>
+              <varRef role='select' name='Q{}theFragment_1' slot='3'/>
+             </applyT>
+            </sequence>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='985' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='987' var='Q{}theFragment_2' as='element()*' slot='5' eval='3'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='element()'/>
+          </slash>
+          <sequence line='989'>
+           <choose>
+            <fn name='empty'>
+             <varRef name='Q{}theDocument_2' slot='4'/>
+            </fn>
+            <message line='992'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to open referenced included file: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <choose line='995'>
+            <fn name='empty'>
+             <varRef name='Q{}theFragment_2' slot='5'/>
+            </fn>
+            <message line='998'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to locate id attribute: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <applyT line='1003' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='13'>
+            <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+           </applyT>
+          </sequence>
+         </let>
+        </let>
+       </choose>
+       <procInst line='1009'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='1010' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='3' rank='2' minImp='0' slots='0' flags='s' line='176' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}report)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='176' name='attribute' nodeTest='attribute(Q{}test)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='177'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='14'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}test)?'>
+       <axis line='178' name='attribute' nodeTest='attribute(Q{}test)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad report: '/>
+      </withParam>
+     </callT>
+     <copy line='183' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='184' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='15'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='11' rank='1' minImp='0' slots='7' flags='s' line='688' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://www.ascc.net/xml/schematron}include)'/>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='690' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='692' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='694'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='695' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='699'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-schematron' bSlot='16'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='701' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='702' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='17'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='709' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='710'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in Schematron include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='717' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='721' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='18'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='Q{http://www.ascc.net/xml/schematron}*'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='Q{http://www.ascc.net/xml/schematron}*'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='726' name='Q{}fragment-id' slot='1'/>
+        <let line='728' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='729'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='732'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='736'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='740' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='Q{http://www.ascc.net/xml/schematron}*'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='Q{http://www.ascc.net/xml/schematron}*'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <sequence line='742'>
+             <choose>
+              <fn name='exists'>
+               <slash simple='2'>
+                <varRef name='Q{}theFragment_1' slot='3'/>
+                <axis name='self' nodeTest='element(Q{http://www.ascc.net/xml/schematron}schema)'/>
+               </slash>
+              </fn>
+              <message line='743'>
+               <valueOf role='select'>
+                <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Schema error: Use include to include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;fragments, not a whole schema&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+               </valueOf>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <choose line='748'>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </fn>
+              <message line='751'>
+               <sequence role='select'>
+                <valueOf>
+                 <str val='Unable to locate id attribute: '/>
+                </valueOf>
+                <valueOf>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <attVal name='Q{}href' chk='0'/>
+                 </convert>
+                </valueOf>
+               </sequence>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <applyT line='755' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='19'>
+              <first role='select'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </first>
+             </applyT>
+            </sequence>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='763' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='765' var='Q{}theFragment_2' as='Q{http://purl.oclc.org/dsdl/schematron}**' slot='5' eval='4'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+          </slash>
+          <let line='767' var='Q{}theContainedFragments' as='((Q{http://www.ascc.net/xml/schematron}* | Q{http://www.w3.org/1999/XSL/Transform}*) | Q{http://www.w3.org/1999/xhtml}*)*' slot='6' eval='4'>
+           <slash>
+            <varRef name='Q{}theDocument_2' slot='4'/>
+            <slash simple='2'>
+             <axis name='child' nodeTest='element()'/>
+             <axis name='child' nodeTest='((Q{http://www.ascc.net/xml/schematron}* | Q{http://www.w3.org/1999/XSL/Transform}*) | Q{http://www.w3.org/1999/xhtml}*)'/>
+            </slash>
+           </slash>
+           <sequence line='768'>
+            <choose>
+             <fn name='empty'>
+              <varRef name='Q{}theDocument_2' slot='4'/>
+             </fn>
+             <message line='771'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to open referenced included file: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+            </choose>
+            <choose line='776'>
+             <or op='or'>
+              <fn name='exists'>
+               <slash simple='2'>
+                <varRef name='Q{}theFragment_2' slot='5'/>
+                <axis name='self' nodeTest='element(Q{http://www.ascc.net/xml/schematron}schema)'/>
+               </slash>
+              </fn>
+              <fn name='exists'>
+               <slash simple='2'>
+                <varRef name='Q{}theContainedFragments' slot='6'/>
+                <axis name='self' nodeTest='element(Q{http://www.ascc.net/xml/schematron}schema)'/>
+               </slash>
+              </fn>
+             </or>
+             <message line='777'>
+              <valueOf role='select'>
+               <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Schema error: Use include to include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;fragments, not a whole schema&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+              </valueOf>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+            </choose>
+            <choose line='783'>
+             <and op='and'>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_2' slot='5'/>
+              </fn>
+              <fn name='empty'>
+               <varRef name='Q{}theContainedFragments' slot='6'/>
+              </fn>
+             </and>
+             <message line='786'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to locate id attribute: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+            </choose>
+            <choose line='794'>
+             <fn name='exists'>
+              <varRef name='Q{}theFragment_2' slot='5'/>
+             </fn>
+             <applyT line='796' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='20'>
+              <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+             </applyT>
+             <true/>
+             <applyT line='801' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='21'>
+              <varRef role='select' name='Q{}theContainedFragments' slot='6'/>
+             </applyT>
+            </choose>
+           </sequence>
+          </let>
+         </let>
+        </let>
+       </choose>
+       <procInst line='810'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='811' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='6' rank='2' minImp='0' slots='0' flags='s' line='213' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}name)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='213' name='attribute' nodeTest='attribute(Q{}path)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='214'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='22'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}select)?'>
+       <axis line='215' name='attribute' nodeTest='attribute(Q{}select)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad name element: '/>
+      </withParam>
+     </callT>
+     <copy line='220' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='221' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='23'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='9' rank='1' minImp='0' slots='7' flags='s' line='349' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://purl.oclc.org/dsdl/schematron}include)'/>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='352' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='354' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='357'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='358' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='362'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-schematron' bSlot='24'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='364' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='365' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='25'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='373' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='374'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in Schematron include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='381' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='385' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='26'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='402' name='Q{}fragment-id' slot='1'/>
+        <let line='404' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='408'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='411'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='415'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='419' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <choose line='424'>
+             <fn name='empty'>
+              <varRef name='Q{}theFragment_1' slot='3'/>
+             </fn>
+             <message line='427'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to locate id attribute: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+             <fn line='436' name='exists'>
+              <slash simple='2'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+               <axis name='self' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}schema)'/>
+              </slash>
+             </fn>
+             <message line='437'>
+              <valueOf role='select'>
+               <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Schema error: Use include to&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;include fragments, not a whole&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;schema&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+              </valueOf>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+             <true/>
+             <applyT line='447' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='27'>
+              <first role='select'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </first>
+             </applyT>
+            </choose>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='457' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='459' var='Q{}theFragment_2' as='Q{http://purl.oclc.org/dsdl/schematron}**' slot='5' eval='4'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+          </slash>
+          <let line='461' var='Q{}theContainedFragments' as='((Q{http://purl.oclc.org/dsdl/schematron}* | Q{http://www.w3.org/1999/XSL/Transform}*) | Q{http://www.w3.org/1999/xhtml}*)*' slot='6' eval='4'>
+           <slash>
+            <varRef name='Q{}theDocument_2' slot='4'/>
+            <slash simple='2'>
+             <axis name='child' nodeTest='element()'/>
+             <axis name='child' nodeTest='((Q{http://purl.oclc.org/dsdl/schematron}* | Q{http://www.w3.org/1999/XSL/Transform}*) | Q{http://www.w3.org/1999/xhtml}*)'/>
+            </slash>
+           </slash>
+           <sequence line='462'>
+            <choose>
+             <fn name='empty'>
+              <varRef name='Q{}theDocument_2' slot='4'/>
+             </fn>
+             <message line='465'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to open referenced included file: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+            </choose>
+            <choose line='484'>
+             <and op='and'>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_2' slot='5'/>
+              </fn>
+              <fn name='empty'>
+               <varRef name='Q{}theContainedFragments' slot='6'/>
+              </fn>
+             </and>
+             <message line='487'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to locate id attribute: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+             <or line='495' op='or'>
+              <fn name='exists'>
+               <slash simple='2'>
+                <varRef name='Q{}theFragment_2' slot='5'/>
+                <axis name='self' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}schema)'/>
+               </slash>
+              </fn>
+              <fn name='exists'>
+               <slash simple='2'>
+                <varRef name='Q{}theContainedFragments' slot='6'/>
+                <axis name='self' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}schema)'/>
+               </slash>
+              </fn>
+             </or>
+             <message line='496'>
+              <valueOf role='select'>
+               <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Schema error: Use include to include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;fragments, not a whole schema&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+              </valueOf>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+             <true/>
+             <applyT line='509' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='28'>
+              <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+             </applyT>
+            </choose>
+           </sequence>
+          </let>
+         </let>
+        </let>
+       </choose>
+       <procInst line='517'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='518' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='12' rank='1' minImp='0' slots='6' flags='s' line='821' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://www.jenitennison.com/datatypes}include)'/>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='825' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='827' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='828'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='829' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='832'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-dtll' bSlot='29'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='834' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='835' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='30'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='842' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='843'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in DTLL include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='850' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='853' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='31'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='element()'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='element()'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='857' name='Q{}fragment-id' slot='1'/>
+        <let line='859' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='860'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='863'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='867'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='871' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='element()'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='element()'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <sequence line='872'>
+             <choose>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </fn>
+              <message line='875'>
+               <sequence role='select'>
+                <valueOf>
+                 <str val='Unable to locate id attribute: '/>
+                </valueOf>
+                <valueOf>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <attVal name='Q{}href' chk='0'/>
+                 </convert>
+                </valueOf>
+               </sequence>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <applyT line='879' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='32'>
+              <first role='select'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </first>
+             </applyT>
+            </sequence>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='885' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='887' var='Q{}theFragment_2' as='element()*' slot='5' eval='3'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='element()'/>
+          </slash>
+          <sequence line='889'>
+           <choose>
+            <fn name='empty'>
+             <varRef name='Q{}theDocument_2' slot='4'/>
+            </fn>
+            <message line='892'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to open referenced included file: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <choose line='896'>
+            <fn name='empty'>
+             <varRef name='Q{}theFragment_2' slot='5'/>
+            </fn>
+            <message line='899'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to locate id attribute: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <applyT line='903' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='33'>
+            <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+           </applyT>
+          </sequence>
+         </let>
+        </let>
+       </choose>
+       <procInst line='909'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='910' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='8' rank='1' minImp='0' slots='6' flags='s' line='241' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://relaxng.org/ns/structure/1.0}extRef)'/>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='247' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='249' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='251'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='252' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='255'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-relaxng' bSlot='34'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='257' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='258' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='35'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='266' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='267'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in RELAX NG extRef&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='275' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='277' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='36'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='element()'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+             </cast>
+             <varRef name='Q{}fragment-id' slot='1'/>
+            </vc>
+           </filter>
+           <fn name='id'>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </fn>
+          </union>
+          <filter flags='b'>
+           <slash simple='1'>
+            <root/>
+            <axis name='descendant' nodeTest='element()'/>
+           </slash>
+           <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <cast as='xs:string' emptiable='1'>
+             <attVal name='Q{}id' chk='0'/>
+            </cast>
+            <varRef name='Q{}fragment-id' slot='1'/>
+           </vc>
+          </filter>
+         </union>
+        </applyT>
+        <varRef line='281' name='Q{}fragment-id' slot='1'/>
+        <let line='283' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='285'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='288'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='292'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='296' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='element()'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='element()'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <sequence line='297'>
+             <choose>
+              <fn name='empty'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </fn>
+              <message line='300'>
+               <sequence role='select'>
+                <valueOf>
+                 <str val='Unable to locate id attribute: '/>
+                </valueOf>
+                <valueOf>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <attVal name='Q{}href' chk='0'/>
+                 </convert>
+                </valueOf>
+               </sequence>
+               <str role='terminate' val='no'/>
+               <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+              </message>
+             </choose>
+             <applyT line='304' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='37'>
+              <first role='select'>
+               <varRef name='Q{}theFragment_1' slot='3'/>
+              </first>
+             </applyT>
+            </sequence>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='310' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='312' var='Q{}theFragment_2' as='element()*' slot='5' eval='3'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='element()'/>
+          </slash>
+          <sequence line='313'>
+           <choose>
+            <fn name='empty'>
+             <varRef name='Q{}theDocument_2' slot='4'/>
+            </fn>
+            <message line='316'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to open referenced included file: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <choose line='320'>
+            <fn name='empty'>
+             <varRef name='Q{}theFragment_2' slot='5'/>
+            </fn>
+            <message line='323'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to locate id attribute: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <applyT line='327' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='38'>
+            <varRef role='select' name='Q{}theFragment_2' slot='5'/>
+           </applyT>
+          </sequence>
+         </let>
+        </let>
+       </choose>
+       <procInst line='334'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='335' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='10' rank='2' minImp='0' slots='6' flags='s' line='525' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}extends)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='525' name='attribute' nodeTest='attribute(Q{}href)'/>
+    </p.withPredicate>
+    <let role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='528' var='Q{}document-uri' as='xs:string' slot='0' eval='8'>
+     <fn name='substring-before'>
+      <fn name='concat'>
+       <attVal name='Q{}href' chk='0'/>
+       <str val='#'/>
+      </fn>
+      <str val='#'/>
+     </fn>
+     <let line='530' var='Q{}fragment-id' as='xs:string' slot='1' eval='8'>
+      <fn name='substring-after'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <sequence line='533'>
+       <procInst>
+        <str role='name' val='DSDL_INCLUDE_START'/>
+        <convert role='select' line='534' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+       <choose line='538'>
+        <fn name='not'>
+         <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <gVarRef name='Q{}include-schematron' bSlot='39'/>
+          <str val='true'/>
+         </gc10>
+        </fn>
+        <copy line='540' flags='cin'>
+         <sequence role='content'>
+          <copyOf flags='vc'>
+           <axis name='attribute' nodeTest='attribute()'/>
+          </copyOf>
+          <applyT line='541' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='40'>
+           <axis role='select' name='child' nodeTest='node()'/>
+          </applyT>
+         </sequence>
+        </copy>
+        <and line='549' op='and'>
+         <fn name='not'>
+          <varRef name='Q{}document-uri' slot='0'/>
+         </fn>
+         <fn name='not'>
+          <varRef name='Q{}fragment-id' slot='1'/>
+         </fn>
+        </and>
+        <message line='550'>
+         <valueOf role='select'>
+          <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Error: Impossible URL in Schematron include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+         </valueOf>
+         <str role='terminate' val='no'/>
+         <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+        </message>
+        <fn line='557' name='not'>
+         <varRef name='Q{}document-uri' slot='0'/>
+        </fn>
+        <applyT line='561' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='41'>
+         <union role='select' op='|'>
+          <union op='|'>
+           <docOrder intra='1'>
+            <slash simple='2'>
+             <filter flags='b'>
+              <slash simple='1'>
+               <root/>
+               <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+             <axis name='child' nodeTest='element()'/>
+            </slash>
+           </docOrder>
+           <docOrder intra='1'>
+            <slash simple='2'>
+             <fn name='id'>
+              <varRef name='Q{}fragment-id' slot='1'/>
+             </fn>
+             <axis name='child' nodeTest='element()'/>
+            </slash>
+           </docOrder>
+          </union>
+          <docOrder intra='1'>
+           <slash simple='2'>
+            <filter flags='b'>
+             <slash simple='1'>
+              <root/>
+              <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+             </slash>
+             <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+              <cast as='xs:string' emptiable='1'>
+               <attVal name='Q{}id' chk='0'/>
+              </cast>
+              <varRef name='Q{}fragment-id' slot='1'/>
+             </vc>
+            </filter>
+            <axis name='child' nodeTest='element()'/>
+           </slash>
+          </docOrder>
+         </union>
+        </applyT>
+        <varRef line='575' name='Q{}fragment-id' slot='1'/>
+        <let line='577' var='Q{}theDocument_1' as='node()?' slot='2' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <sequence line='581'>
+          <choose>
+           <fn name='empty'>
+            <varRef name='Q{}theDocument_1' slot='2'/>
+           </fn>
+           <message line='584'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <forEach line='588'>
+           <varRef name='Q{}theDocument_1' slot='2'/>
+           <let line='592' var='Q{}theFragment_1' as='element()*' slot='3' eval='4'>
+            <union op='|'>
+             <union op='|'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <varRef name='Q{}theDocument_1' slot='2'/>
+                <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+               </slash>
+               <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                <cast as='xs:string' emptiable='1'>
+                 <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+                </cast>
+                <varRef name='Q{}fragment-id' slot='1'/>
+               </vc>
+              </filter>
+              <fn name='id'>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </fn>
+             </union>
+             <filter flags='b'>
+              <slash simple='1'>
+               <varRef name='Q{}theDocument_1' slot='2'/>
+               <axis name='descendant' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+              </slash>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{}fragment-id' slot='1'/>
+              </vc>
+             </filter>
+            </union>
+            <choose line='597'>
+             <fn name='empty'>
+              <varRef name='Q{}theFragment_1' slot='3'/>
+             </fn>
+             <message line='600'>
+              <sequence role='select'>
+               <valueOf>
+                <str val='Unable to locate id attribute: '/>
+               </valueOf>
+               <valueOf>
+                <convert from='xs:untypedAtomic' to='xs:string'>
+                 <attVal name='Q{}href' chk='0'/>
+                </convert>
+               </valueOf>
+              </sequence>
+              <str role='terminate' val='no'/>
+              <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+             </message>
+             <true/>
+             <applyT line='614' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='42'>
+              <slash role='select' simple='1'>
+               <first>
+                <varRef name='Q{}theFragment_1' slot='3'/>
+               </first>
+               <axis name='child' nodeTest='element()'/>
+              </slash>
+             </applyT>
+            </choose>
+           </let>
+          </forEach>
+         </sequence>
+        </let>
+        <true/>
+        <let line='624' var='Q{}theDocument_2' as='node()?' slot='4' eval='8'>
+         <fn name='document'>
+          <varRef name='Q{}document-uri' slot='0'/>
+          <root/>
+         </fn>
+         <let line='626' var='Q{}theFragment_2' as='Q{http://purl.oclc.org/dsdl/schematron}**' slot='5' eval='4'>
+          <slash simple='1'>
+           <varRef name='Q{}theDocument_2' slot='4'/>
+           <axis name='child' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+          </slash>
+          <sequence line='629'>
+           <choose>
+            <fn name='empty'>
+             <varRef name='Q{}theDocument_2' slot='4'/>
+            </fn>
+            <message line='632'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to open referenced included file: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+           </choose>
+           <choose line='648'>
+            <and op='and'>
+             <fn name='empty'>
+              <varRef name='Q{}theFragment_2' slot='5'/>
+             </fn>
+             <fn line='628' name='empty'>
+              <slash>
+               <varRef name='Q{}theDocument_2' slot='4'/>
+               <slash simple='2'>
+                <axis name='child' nodeTest='element()'/>
+                <axis name='child' nodeTest='((Q{http://purl.oclc.org/dsdl/schematron}* | Q{http://www.w3.org/1999/XSL/Transform}*) | Q{http://www.w3.org/1999/xhtml}*)'/>
+               </slash>
+              </slash>
+             </fn>
+            </and>
+            <message line='651'>
+             <sequence role='select'>
+              <valueOf>
+               <str val='Unable to locate id attribute: '/>
+              </valueOf>
+              <valueOf>
+               <convert from='xs:untypedAtomic' to='xs:string'>
+                <attVal name='Q{}href' chk='0'/>
+               </convert>
+              </valueOf>
+             </sequence>
+             <str role='terminate' val='no'/>
+             <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+            </message>
+            <true/>
+            <applyT line='666' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='43'>
+             <slash role='select' simple='2'>
+              <varRef name='Q{}theFragment_2' slot='5'/>
+              <axis name='child' nodeTest='element()'/>
+             </slash>
+            </applyT>
+           </choose>
+          </sequence>
+         </let>
+        </let>
+       </choose>
+       <procInst line='674'>
+        <str role='name' val='DSDL_INCLUDE_END'/>
+        <convert role='select' line='675' from='xs:untypedAtomic' to='xs:string'>
+         <cast as='xs:untypedAtomic' emptiable='0'>
+          <fn name='string'>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}href' chk='0'/>
+           </convert>
+          </fn>
+         </cast>
+        </convert>
+       </procInst>
+      </sequence>
+     </let>
+    </let>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='14' rank='2' minImp='0' slots='8' flags='s' line='1030' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.withPredicate>
+      <p.nodeTest test='element(Q{http://www.w3.org/2001/XInclude}include)'/>
+      <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1030' name='attribute' nodeTest='attribute(Q{}href)'/>
+     </p.withPredicate>
+     <or ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1030' op='or'>
+      <fn name='empty'>
+       <axis name='attribute' nodeTest='attribute(Q{}parseType)'/>
+      </fn>
+      <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+       <cast as='xs:string' emptiable='1'>
+        <attVal name='Q{}parseType' chk='0'/>
+       </cast>
+       <str val='xml'/>
+      </vc>
+     </or>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1032'>
+     <procInst>
+      <str role='name' val='DSDL_INCLUDE_START'/>
+      <convert role='select' line='1033' from='xs:untypedAtomic' to='xs:string'>
+       <cast as='xs:untypedAtomic' emptiable='0'>
+        <fn name='string'>
+         <convert from='xs:untypedAtomic' to='xs:string'>
+          <attVal name='Q{}href' chk='0'/>
+         </convert>
+        </fn>
+       </cast>
+      </convert>
+     </procInst>
+     <choose line='1036'>
+      <fn name='not'>
+       <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+        <gVarRef name='Q{}include-xinclude' bSlot='44'/>
+        <str val='true'/>
+       </gc10>
+      </fn>
+      <copy line='1038' flags='cin'>
+       <sequence role='content'>
+        <copyOf flags='vc'>
+         <axis name='attribute' nodeTest='attribute()'/>
+        </copyOf>
+        <applyT line='1039' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='45'>
+         <axis role='select' name='child' nodeTest='node()'/>
+        </applyT>
+       </sequence>
+      </copy>
+      <fn ns='' line='1045' name='contains'>
+       <fn name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+       <str val='#'/>
+      </fn>
+      <message line='1046'>
+       <valueOf role='select'>
+        <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Fatal error: Xinclude href contains fragment&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;identifier #&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+       </valueOf>
+       <str role='terminate' val='yes'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+      <fn ns='' line='1053' name='contains'>
+       <fn name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+       </fn>
+       <str val='('/>
+      </fn>
+      <message line='1054'>
+       <valueOf role='select'>
+        <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Fatal error: Sorry, this software only&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;supports simple ids in XInclude xpointers&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+       </valueOf>
+       <str role='terminate' val='yes'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+      <and line='1061' op='and'>
+       <fn name='not'>
+        <fn ns='' name='string'>
+         <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+        </fn>
+       </fn>
+       <fn name='not'>
+        <fn ns='' name='string'>
+         <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+        </fn>
+       </fn>
+      </and>
+      <message line='1063'>
+       <valueOf role='select'>
+        <str val='&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Fatal Error: Impossible URL in XInclude&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;include&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'/>
+       </valueOf>
+       <str role='terminate' val='yes'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+      <fn line='1070' name='not'>
+       <fn ns='' name='string'>
+        <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}href)'/>
+       </fn>
+      </fn>
+      <applyT line='1074' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='46'>
+       <let role='select' var='Q{http://saxon.sf.net/generated-variable}current-83492023' as='element(Q{http://www.w3.org/2001/XInclude}include)' slot='0' eval='16'>
+        <dot type='element(Q{http://www.w3.org/2001/XInclude}include)'/>
+        <let var='Q{http://saxon.sf.net/generated-variable}v1' as='xs:string?' slot='1' eval='13'>
+         <cast as='xs:string' emptiable='1'>
+          <data>
+           <slash simple='1'>
+            <varRef name='Q{http://saxon.sf.net/generated-variable}current-83492023' slot='0'/>
+            <axis name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+           </slash>
+          </data>
+         </cast>
+         <let var='Q{http://saxon.sf.net/generated-variable}v0' as='xs:string?' slot='2' eval='13'>
+          <cast as='xs:string' emptiable='1'>
+           <data>
+            <slash simple='1'>
+             <varRef name='Q{http://saxon.sf.net/generated-variable}current-83492023' slot='0'/>
+             <axis name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+            </slash>
+           </data>
+          </cast>
+          <union op='|'>
+           <union op='|'>
+            <filter flags='b'>
+             <slash simple='1'>
+              <root/>
+              <axis name='descendant' nodeTest='element()'/>
+             </slash>
+             <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+              <cast as='xs:string' emptiable='1'>
+               <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+              </cast>
+              <varRef name='Q{http://saxon.sf.net/generated-variable}v0' slot='2'/>
+             </vc>
+            </filter>
+            <fn name='id'>
+             <cvUntyped to='xs:string'>
+              <attVal name='Q{}xpointer' chk='0'/>
+             </cvUntyped>
+            </fn>
+           </union>
+           <filter flags='b'>
+            <slash simple='1'>
+             <root/>
+             <axis name='descendant' nodeTest='element()'/>
+            </slash>
+            <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <cast as='xs:string' emptiable='1'>
+              <attVal name='Q{}id' chk='0'/>
+             </cast>
+             <varRef name='Q{http://saxon.sf.net/generated-variable}v1' slot='1'/>
+            </vc>
+           </filter>
+          </union>
+         </let>
+        </let>
+       </let>
+      </applyT>
+      <fn ns='' line='1078' name='string'>
+       <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+      </fn>
+      <let line='1080' var='Q{}theDocument_1' as='node()?' slot='3' eval='8'>
+       <fn name='document'>
+        <axis name='attribute' nodeTest='attribute(Q{}href)'/>
+        <root/>
+       </fn>
+       <sequence line='1092'>
+        <choose>
+         <fn name='empty'>
+          <varRef name='Q{}theDocument_1' slot='3'/>
+         </fn>
+         <choose line='1094'>
+          <fn name='exists'>
+           <axis name='child' nodeTest='element(Q{http://www.w3.org/2001/XInclude}fallback)'/>
+          </fn>
+          <choose line='1107'>
+           <fn name='empty'>
+            <fn line='1097' name='document'>
+             <slash simple='2'>
+              <filter flags='b'>
+               <slash simple='1'>
+                <first>
+                 <axis name='child' nodeTest='element(Q{http://www.w3.org/2001/XInclude}fallback)'/>
+                </first>
+                <axis name='child' nodeTest='element(Q{http://www.w3.org/2001/XInclude}include)'/>
+               </slash>
+               <or op='or'>
+                <fn name='empty'>
+                 <axis name='attribute' nodeTest='attribute(Q{}parseType)'/>
+                </fn>
+                <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                 <cast as='xs:string' emptiable='1'>
+                  <attVal name='Q{}parseType' chk='0'/>
+                 </cast>
+                 <str val='xml'/>
+                </vc>
+               </or>
+              </filter>
+              <axis name='attribute' nodeTest='attribute(Q{}href)'/>
+             </slash>
+             <root/>
+            </fn>
+           </fn>
+           <message line='1113'>
+            <sequence role='select'>
+             <valueOf>
+              <str val='Unable to open referenced included file and fallback&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;file: '/>
+             </valueOf>
+             <valueOf>
+              <convert from='xs:untypedAtomic' to='xs:string'>
+               <attVal name='Q{}href' chk='0'/>
+              </convert>
+             </valueOf>
+            </sequence>
+            <str role='terminate' val='no'/>
+            <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+           </message>
+          </choose>
+          <true/>
+          <message line='1120'>
+           <sequence role='select'>
+            <valueOf>
+             <str val='Unable to open referenced included file: '/>
+            </valueOf>
+            <valueOf>
+             <convert from='xs:untypedAtomic' to='xs:string'>
+              <attVal name='Q{}href' chk='0'/>
+             </convert>
+            </valueOf>
+           </sequence>
+           <str role='terminate' val='no'/>
+           <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+          </message>
+         </choose>
+        </choose>
+        <applyT line='1126' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='47'>
+         <let role='select' line='1084' var='Q{http://saxon.sf.net/generated-variable}current697' as='element(Q{http://www.w3.org/2001/XInclude}include)' slot='4' eval='16'>
+          <dot type='element(Q{http://www.w3.org/2001/XInclude}include)'/>
+          <let var='Q{http://saxon.sf.net/generated-variable}v3' as='xs:string?' slot='5' eval='13'>
+           <cast as='xs:string' emptiable='1'>
+            <data>
+             <slash simple='1'>
+              <varRef name='Q{http://saxon.sf.net/generated-variable}current697' slot='4'/>
+              <axis name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+             </slash>
+            </data>
+           </cast>
+           <let var='Q{http://saxon.sf.net/generated-variable}v2' as='xs:string?' slot='6' eval='13'>
+            <cast as='xs:string' emptiable='1'>
+             <data>
+              <slash simple='1'>
+               <varRef name='Q{http://saxon.sf.net/generated-variable}current697' slot='4'/>
+               <axis name='attribute' nodeTest='attribute(Q{}xpointer)'/>
+              </slash>
+             </data>
+            </cast>
+            <filter flags='b'>
+             <slash simple='1'>
+              <varRef name='Q{}theDocument_1' slot='3'/>
+              <axis name='descendant' nodeTest='element()'/>
+             </slash>
+             <or op='or'>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{http://www.w3.org/XML/1998/namespace}id' chk='0'/>
+               </cast>
+               <varRef name='Q{http://saxon.sf.net/generated-variable}v2' slot='6'/>
+              </vc>
+              <vc op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <cast as='xs:string' emptiable='1'>
+                <attVal name='Q{}id' chk='0'/>
+               </cast>
+               <varRef name='Q{http://saxon.sf.net/generated-variable}v3' slot='5'/>
+              </vc>
+             </or>
+            </filter>
+           </let>
+          </let>
+         </let>
+        </applyT>
+       </sequence>
+      </let>
+      <true/>
+      <let line='1132' var='Q{}theDocument_3' as='node()?' slot='7' eval='8'>
+       <fn name='document'>
+        <axis name='attribute' nodeTest='attribute(Q{}href)'/>
+        <root/>
+       </fn>
+       <sequence line='1136'>
+        <choose>
+         <fn name='empty'>
+          <varRef name='Q{}theDocument_3' slot='7'/>
+         </fn>
+         <message line='1139'>
+          <sequence role='select'>
+           <valueOf>
+            <str val='Unable to open referenced included file: '/>
+           </valueOf>
+           <valueOf>
+            <convert from='xs:untypedAtomic' to='xs:string'>
+             <attVal name='Q{}href' chk='0'/>
+            </convert>
+           </valueOf>
+          </sequence>
+          <str role='terminate' val='no'/>
+          <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+         </message>
+        </choose>
+        <applyT line='1144' mode='Q{http://www.schematron.com/namespace/dsdl}go' bSlot='48'>
+         <slash role='select' line='1134' simple='1'>
+          <varRef name='Q{}theDocument_3' slot='7'/>
+          <axis name='child' nodeTest='element()'/>
+         </slash>
+        </applyT>
+       </sequence>
+      </let>
+     </choose>
+     <procInst line='1150'>
+      <str role='name' val='DSDL_INCLUDE_END'/>
+      <convert role='select' line='1151' from='xs:untypedAtomic' to='xs:string'>
+       <cast as='xs:untypedAtomic' emptiable='0'>
+        <fn name='string'>
+         <convert from='xs:untypedAtomic' to='xs:string'>
+          <attVal name='Q{}href' chk='0'/>
+         </convert>
+        </fn>
+       </cast>
+      </convert>
+     </procInst>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='1' rank='2' minImp='0' slots='0' flags='s' line='152' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}rule)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='152' name='attribute' nodeTest='attribute(Q{}context)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='153'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='49'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}context)?'>
+       <axis line='154' name='attribute' nodeTest='attribute(Q{}context)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad rule: '/>
+      </withParam>
+     </callT>
+     <copy line='159' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='160' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='50'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='4' rank='2' minImp='0' slots='0' flags='s' line='188' module='iso_dsdl_include.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}let)'/>
+     <axis ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='188' name='attribute' nodeTest='attribute(Q{}value)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='189'>
+     <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' bSlot='51'>
+      <withParam name='Q{}string' flags='c' as='attribute(Q{}value)?'>
+       <axis line='190' name='attribute' nodeTest='attribute(Q{}value)'/>
+      </withParam>
+      <withParam name='Q{}subject' flags='c' as='xs:string'>
+       <str val='Bad let: '/>
+      </withParam>
+     </callT>
+     <copy line='195' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='196' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='52'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='-1.0' seq='7' rank='0' minImp='0' slots='0' flags='s' line='226' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='( element() | text() | comment() | processing-instruction() )'/>
+    <copy role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='228' flags='cin'>
+     <sequence role='content'>
+      <copyOf flags='vc'>
+       <axis name='attribute' nodeTest='attribute()'/>
+      </copyOf>
+      <applyT line='229' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='i' bSlot='53'>
+       <axis role='select' name='child' nodeTest='node()'/>
+      </applyT>
+     </sequence>
+    </copy>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='4' binds=''>
+  <globalParam name='Q{}include-schematron' type='item()*' line='134' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='134' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='5' binds=''>
+  <globalParam name='Q{}include-dtll' type='item()*' line='137' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='137' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='3' binds=''>
+  <globalParam name='Q{}include-crdl' type='item()*' line='135' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='135' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='8' binds='9 10 11'>
+  <template name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf' flags='os' line='1279' module='iso_dsdl_include.xsl' slots='4'>
+   <sequence role='body' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1280'>
+    <param name='Q{}string' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <let line='1294' var='Q{}stripped-contents' as='document-node()' slot='1' eval='16'>
+     <doc line='1295' validation='preserve'>
+      <callT name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='0'>
+       <withParam name='Q{}string' flags='c'>
+        <varRef line='1296' name='Q{}string' slot='0'/>
+       </withParam>
+       <withParam name='Q{}mode' flags='c' as='xs:integer'>
+        <int val='0'/>
+       </withParam>
+      </callT>
+     </doc>
+     <let line='1302' var='Q{}paren-result' as='document-node()' slot='2' eval='16'>
+      <doc line='1303' validation='preserve'>
+       <callT name='Q{http://www.schematron.com/namespace/sch-check}test-paren' bSlot='1'>
+        <withParam name='Q{}string' flags='c' as='document-node()'>
+         <varRef line='1304' name='Q{}stripped-contents' slot='1'/>
+        </withParam>
+        <withParam name='Q{}count' flags='c' as='xs:integer'>
+         <int val='0'/>
+        </withParam>
+       </callT>
+      </doc>
+      <let line='1310' var='Q{}sqb-result' as='document-node()' slot='3' eval='16'>
+       <doc line='1311' validation='preserve'>
+        <callT name='Q{http://www.schematron.com/namespace/sch-check}test-sqb' bSlot='2'>
+         <withParam name='Q{}string' flags='c' as='document-node()'>
+          <varRef line='1312' name='Q{}stripped-contents' slot='1'/>
+         </withParam>
+         <withParam name='Q{}count' flags='c' as='xs:integer'>
+          <int val='0'/>
+         </withParam>
+        </callT>
+       </doc>
+       <choose line='1320'>
+        <fn name='not'>
+         <fn name='normalize-space'>
+          <fn ns='' name='string'>
+           <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+            <varRef name='Q{}string' slot='0'/>
+           </first>
+          </fn>
+         </fn>
+        </fn>
+        <valueOf>
+         <str val='XPath error. No XPath.'/>
+        </valueOf>
+        <fn ns='' line='1322' name='contains'>
+         <fn name='string'>
+          <varRef ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='Q{}stripped-contents' slot='1'/>
+         </fn>
+         <str val='/['/>
+        </fn>
+        <sequence line='1322'>
+         <valueOf>
+          <str val='XPath error. Missing location step. Suggestion: remove &#39;/&#39; before &#39;[&#39;.&#xA;      '/>
+         </valueOf>
+         <valueOf line='1323'>
+          <fn name='normalize-space'>
+           <fn ns='' name='string'>
+            <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+             <varRef name='Q{}string' slot='0'/>
+            </first>
+           </fn>
+          </fn>
+         </valueOf>
+        </sequence>
+        <gc10 line='1333' op='&gt;' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <data>
+          <varRef name='Q{}paren-result' slot='2'/>
+         </data>
+         <int val='0'/>
+        </gc10>
+        <sequence line='1333'>
+         <valueOf>
+          <str val='XPath syntax error. Unclosed parenthesis. Suggestion: add &#39;)&#39;.&#xA;      '/>
+         </valueOf>
+         <valueOf line='1334'>
+          <fn name='normalize-space'>
+           <fn ns='' name='string'>
+            <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+             <varRef name='Q{}string' slot='0'/>
+            </first>
+           </fn>
+          </fn>
+         </valueOf>
+        </sequence>
+        <gc10 line='1336' op='&lt;' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <data>
+          <varRef name='Q{}paren-result' slot='2'/>
+         </data>
+         <int val='0'/>
+        </gc10>
+        <sequence line='1336'>
+         <valueOf>
+          <str val='XPath syntax error. Extra close parenthesis. Suggestion: remove &#39;)&#39;.&#xA;      '/>
+         </valueOf>
+         <valueOf line='1337'>
+          <fn name='normalize-space'>
+           <fn ns='' name='string'>
+            <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+             <varRef name='Q{}string' slot='0'/>
+            </first>
+           </fn>
+          </fn>
+         </valueOf>
+        </sequence>
+        <gc10 line='1340' op='&gt;' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <data>
+          <varRef name='Q{}sqb-result' slot='3'/>
+         </data>
+         <int val='0'/>
+        </gc10>
+        <sequence line='1340'>
+         <valueOf>
+          <str val='XPath syntax error. Unclosed left square bracket. Suggestion: add &#39;]&#39;.&#xA;      '/>
+         </valueOf>
+         <valueOf line='1341'>
+          <fn name='normalize-space'>
+           <fn ns='' name='string'>
+            <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+             <varRef name='Q{}string' slot='0'/>
+            </first>
+           </fn>
+          </fn>
+         </valueOf>
+        </sequence>
+        <gc10 line='1343' op='&lt;' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <data>
+          <varRef name='Q{}sqb-result' slot='3'/>
+         </data>
+         <int val='0'/>
+        </gc10>
+        <sequence line='1343'>
+         <valueOf>
+          <str val='XPath syntax error. Extra right square bracket. Suggestion: remove &#39;]&#39;.&#xA;      '/>
+         </valueOf>
+         <valueOf line='1344'>
+          <fn name='normalize-space'>
+           <fn ns='' name='string'>
+            <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+             <varRef name='Q{}string' slot='0'/>
+            </first>
+           </fn>
+          </fn>
+         </valueOf>
+        </sequence>
+       </choose>
+      </let>
+     </let>
+    </let>
+   </sequence>
+  </template>
+ </co>
+ <co id='10' binds='10 10 10'>
+  <template name='Q{http://www.schematron.com/namespace/sch-check}test-paren' flags='os' line='1450' module='iso_dsdl_include.xsl' slots='4'>
+   <sequence role='body' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1451'>
+    <param name='Q{}string' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='1452' name='Q{}count' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <choose line='1455'>
+     <fn name='not'>
+      <fn ns='' name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+     </fn>
+     <valueOf line='1456'>
+      <convert from='xs:anyAtomicType' to='xs:string'>
+       <first>
+        <data>
+         <varRef name='Q{}count' slot='1'/>
+        </data>
+       </first>
+      </convert>
+     </valueOf>
+     <fn ns='' line='1458' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val='('/>
+     </fn>
+     <callT line='1459' name='Q{http://www.schematron.com/namespace/sch-check}test-paren' bSlot='0' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1460' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c' as='xs:anyAtomicType'>
+       <arith10 line='1461' op='+' calc='a+a'>
+        <let var='Q{http://saxon.sf.net/}nn1487500813' as='xs:anyAtomicType?' slot='2' eval='7'>
+         <atomSing card='?' diag='1|0||+'>
+          <first>
+           <varRef name='Q{}count' slot='1'/>
+          </first>
+         </atomSing>
+         <choose>
+          <or op='or'>
+           <or op='or'>
+            <or op='or'>
+             <or op='or'>
+              <or op='or'>
+               <instance of='xs:double?'>
+                <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+               </instance>
+               <instance of='xs:decimal?'>
+                <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+               </instance>
+              </or>
+              <instance of='xs:float?'>
+               <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+              </instance>
+             </or>
+             <instance of='xs:string?'>
+              <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+             </instance>
+            </or>
+            <instance of='xs:untypedAtomic?'>
+             <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+            </instance>
+           </or>
+           <instance of='xs:boolean?'>
+            <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+           </instance>
+          </or>
+          <fn name='number'>
+           <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+          </fn>
+          <true/>
+          <varRef name='Q{http://saxon.sf.net/}nn1487500813' slot='2'/>
+         </choose>
+        </let>
+        <dbl val='1'/>
+       </arith10>
+      </withParam>
+     </callT>
+     <fn ns='' line='1464' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val=')'/>
+     </fn>
+     <callT line='1465' name='Q{http://www.schematron.com/namespace/sch-check}test-paren' bSlot='1' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1466' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c' as='xs:anyAtomicType'>
+       <arith10 line='1467' op='-' calc='a-a'>
+        <let var='Q{http://saxon.sf.net/}nn1462044018' as='xs:anyAtomicType?' slot='3' eval='7'>
+         <atomSing card='?' diag='1|0||-'>
+          <first>
+           <varRef name='Q{}count' slot='1'/>
+          </first>
+         </atomSing>
+         <choose>
+          <or op='or'>
+           <or op='or'>
+            <or op='or'>
+             <or op='or'>
+              <or op='or'>
+               <instance of='xs:double?'>
+                <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+               </instance>
+               <instance of='xs:decimal?'>
+                <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+               </instance>
+              </or>
+              <instance of='xs:float?'>
+               <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+              </instance>
+             </or>
+             <instance of='xs:string?'>
+              <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+             </instance>
+            </or>
+            <instance of='xs:untypedAtomic?'>
+             <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+            </instance>
+           </or>
+           <instance of='xs:boolean?'>
+            <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+           </instance>
+          </or>
+          <fn name='number'>
+           <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+          </fn>
+          <true/>
+          <varRef name='Q{http://saxon.sf.net/}nn1462044018' slot='3'/>
+         </choose>
+        </let>
+        <dbl val='1'/>
+       </arith10>
+      </withParam>
+     </callT>
+     <true/>
+     <callT line='1471' name='Q{http://www.schematron.com/namespace/sch-check}test-paren' bSlot='2' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1472' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c'>
+       <varRef line='1473' name='Q{}count' slot='1'/>
+      </withParam>
+     </callT>
+    </choose>
+   </sequence>
+  </template>
+ </co>
+ <co id='6' binds=''>
+  <globalParam name='Q{}include-relaxng' type='item()*' line='138' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='138' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='7' binds=''>
+  <globalParam name='Q{}include-xinclude' type='item()*' line='136' module='iso_dsdl_include.xsl' visibility='PUBLIC'>
+   <doc ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='136' flags='t' text='true' validation='preserve'>
+    <valueOf flags='Sl'>
+     <str val='true'/>
+    </valueOf>
+   </doc>
+  </globalParam>
+ </co>
+ <co id='11' binds='11 11 11'>
+  <template name='Q{http://www.schematron.com/namespace/sch-check}test-sqb' flags='os' line='1484' module='iso_dsdl_include.xsl' slots='4'>
+   <sequence role='body' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1485'>
+    <param name='Q{}string' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='1486' name='Q{}count' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <choose line='1489'>
+     <fn name='not'>
+      <fn ns='' name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+     </fn>
+     <valueOf line='1490'>
+      <convert from='xs:anyAtomicType' to='xs:string'>
+       <first>
+        <data>
+         <varRef name='Q{}count' slot='1'/>
+        </data>
+       </first>
+      </convert>
+     </valueOf>
+     <fn ns='' line='1492' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val='['/>
+     </fn>
+     <callT line='1493' name='Q{http://www.schematron.com/namespace/sch-check}test-sqb' bSlot='0' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1494' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c' as='xs:anyAtomicType'>
+       <arith10 line='1495' op='+' calc='a+a'>
+        <let var='Q{http://saxon.sf.net/}nn555273695' as='xs:anyAtomicType?' slot='2' eval='7'>
+         <atomSing card='?' diag='1|0||+'>
+          <first>
+           <varRef name='Q{}count' slot='1'/>
+          </first>
+         </atomSing>
+         <choose>
+          <or op='or'>
+           <or op='or'>
+            <or op='or'>
+             <or op='or'>
+              <or op='or'>
+               <instance of='xs:double?'>
+                <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+               </instance>
+               <instance of='xs:decimal?'>
+                <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+               </instance>
+              </or>
+              <instance of='xs:float?'>
+               <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+              </instance>
+             </or>
+             <instance of='xs:string?'>
+              <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+             </instance>
+            </or>
+            <instance of='xs:untypedAtomic?'>
+             <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+            </instance>
+           </or>
+           <instance of='xs:boolean?'>
+            <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+           </instance>
+          </or>
+          <fn name='number'>
+           <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+          </fn>
+          <true/>
+          <varRef name='Q{http://saxon.sf.net/}nn555273695' slot='2'/>
+         </choose>
+        </let>
+        <dbl val='1'/>
+       </arith10>
+      </withParam>
+     </callT>
+     <fn ns='' line='1498' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val=']'/>
+     </fn>
+     <callT line='1499' name='Q{http://www.schematron.com/namespace/sch-check}test-sqb' bSlot='1' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1500' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c' as='xs:anyAtomicType'>
+       <arith10 line='1501' op='-' calc='a-a'>
+        <let var='Q{http://saxon.sf.net/}nn396883763' as='xs:anyAtomicType?' slot='3' eval='7'>
+         <atomSing card='?' diag='1|0||-'>
+          <first>
+           <varRef name='Q{}count' slot='1'/>
+          </first>
+         </atomSing>
+         <choose>
+          <or op='or'>
+           <or op='or'>
+            <or op='or'>
+             <or op='or'>
+              <or op='or'>
+               <instance of='xs:double?'>
+                <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+               </instance>
+               <instance of='xs:decimal?'>
+                <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+               </instance>
+              </or>
+              <instance of='xs:float?'>
+               <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+              </instance>
+             </or>
+             <instance of='xs:string?'>
+              <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+             </instance>
+            </or>
+            <instance of='xs:untypedAtomic?'>
+             <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+            </instance>
+           </or>
+           <instance of='xs:boolean?'>
+            <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+           </instance>
+          </or>
+          <fn name='number'>
+           <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+          </fn>
+          <true/>
+          <varRef name='Q{http://saxon.sf.net/}nn396883763' slot='3'/>
+         </choose>
+        </let>
+        <dbl val='1'/>
+       </arith10>
+      </withParam>
+     </callT>
+     <true/>
+     <callT line='1505' name='Q{http://www.schematron.com/namespace/sch-check}test-sqb' bSlot='2' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1506' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}count' flags='c'>
+       <varRef line='1507' name='Q{}count' slot='1'/>
+      </withParam>
+     </callT>
+    </choose>
+   </sequence>
+  </template>
+ </co>
+ <co id='2' binds='8'>
+  <template name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf-message' flags='os' line='1263' module='iso_dsdl_include.xsl' slots='3'>
+   <sequence role='body' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1264'>
+    <param name='Q{}string' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='1265' name='Q{}subject' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <let line='1266' var='Q{}xpath-wf-result' as='document-node()' slot='2' eval='16'>
+     <doc line='1267' validation='preserve'>
+      <callT name='Q{http://www.schematron.com/namespace/sch-check}xpath-wf' bSlot='0'>
+       <withParam name='Q{}string' flags='c'>
+        <varRef line='1268' name='Q{}string' slot='0'/>
+       </withParam>
+      </callT>
+     </doc>
+     <choose line='1272'>
+      <fn ns='' name='string'>
+       <varRef ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' name='Q{}xpath-wf-result' slot='2'/>
+      </fn>
+      <message line='1273'>
+       <sequence role='select'>
+        <valueOf>
+         <convert from='xs:anyAtomicType' to='xs:string'>
+          <first>
+           <data>
+            <varRef name='Q{}subject' slot='1'/>
+           </data>
+          </first>
+         </convert>
+        </valueOf>
+        <valueOf>
+         <convert from='xs:untypedAtomic' to='xs:string'>
+          <data>
+           <varRef name='Q{}xpath-wf-result' slot='2'/>
+          </data>
+         </convert>
+        </valueOf>
+       </sequence>
+       <str role='terminate' val='no'/>
+       <str role='error' val='Q{http://www.w3.org/2005/xqt-errors}XTMM9000'/>
+      </message>
+     </choose>
+    </let>
+   </sequence>
+  </template>
+ </co>
+ <co id='12' binds='1'>
+  <mode onNo='TC' flags='dW' patternSlots='0'>
+   <templateRule prec='0' prio='-0.5' seq='0' rank='0' minImp='0' slots='0' flags='s' line='146' module='iso_dsdl_include.xsl'>
+    <p.nodeTest role='match' test='document-node()'/>
+    <applyT role='action' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='147' mode='Q{http://www.schematron.com/namespace/dsdl}go' flags='t' bSlot='0'>
+     <dot role='select' type='document-node()'/>
+    </applyT>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='9' binds='9 9 9 9 9 9 9 9 9'>
+  <template name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' flags='os' line='1354' module='iso_dsdl_include.xsl' slots='2'>
+   <sequence role='body' ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink' line='1355'>
+    <param name='Q{}string' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='1356' name='Q{}mode' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <choose line='1364'>
+     <fn name='not'>
+      <fn ns='' name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+     </fn>
+     <empty/>
+     <gc10 line='1365' op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+      <varRef name='Q{}mode' slot='1'/>
+      <int val='1'/>
+     </gc10>
+     <choose line='1369'>
+      <fn ns='' name='starts-with'>
+       <fn name='string'>
+        <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+         <varRef name='Q{}string' slot='0'/>
+        </first>
+       </fn>
+       <str val='""'/>
+      </fn>
+      <callT line='1371' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='0' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1372' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='3'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c'>
+        <varRef line='1373' name='Q{}mode' slot='1'/>
+       </withParam>
+      </callT>
+      <fn ns='' line='1376' name='starts-with'>
+       <fn name='string'>
+        <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+         <varRef name='Q{}string' slot='0'/>
+        </first>
+       </fn>
+       <str val='"'/>
+      </fn>
+      <callT line='1377' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='1' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1378' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='2'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c' as='xs:integer'>
+        <int val='0'/>
+       </withParam>
+      </callT>
+      <true/>
+      <callT line='1384' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='2' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1385' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='2'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c'>
+        <varRef line='1386' name='Q{}mode' slot='1'/>
+       </withParam>
+      </callT>
+     </choose>
+     <gc10 line='1392' op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+      <varRef name='Q{}mode' slot='1'/>
+      <int val='2'/>
+     </gc10>
+     <choose line='1396'>
+      <fn ns='' name='starts-with'>
+       <fn name='string'>
+        <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+         <varRef name='Q{}string' slot='0'/>
+        </first>
+       </fn>
+       <str val='&#39;&#39;'/>
+      </fn>
+      <callT line='1397' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='3' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1398' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='3'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c'>
+        <varRef line='1399' name='Q{}mode' slot='1'/>
+       </withParam>
+      </callT>
+      <fn ns='' line='1402' name='starts-with'>
+       <fn name='string'>
+        <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+         <varRef name='Q{}string' slot='0'/>
+        </first>
+       </fn>
+       <str val='&#39;'/>
+      </fn>
+      <callT line='1403' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='4' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1404' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='2'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c' as='xs:integer'>
+        <int val='0'/>
+       </withParam>
+      </callT>
+      <true/>
+      <callT line='1409' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='5' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1410' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='2'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c'>
+        <varRef line='1411' name='Q{}mode' slot='1'/>
+       </withParam>
+      </callT>
+     </choose>
+     <fn ns='' line='1419' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val='"'/>
+     </fn>
+     <callT line='1420' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='6' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1421' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}mode' flags='c' as='xs:integer'>
+       <int val='1'/>
+      </withParam>
+     </callT>
+     <fn ns='' line='1426' name='starts-with'>
+      <fn name='string'>
+       <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+        <varRef name='Q{}string' slot='0'/>
+       </first>
+      </fn>
+      <str val='&#39;'/>
+     </fn>
+     <callT line='1427' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='7' flags='t'>
+      <withParam name='Q{}string' flags='c' as='xs:string'>
+       <fn line='1428' name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='2'/>
+       </fn>
+      </withParam>
+      <withParam name='Q{}mode' flags='c' as='xs:integer'>
+       <int val='2'/>
+      </withParam>
+     </callT>
+     <true/>
+     <sequence line='1433'>
+      <valueOf>
+       <fn name='substring'>
+        <fn ns='' name='string'>
+         <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+          <varRef name='Q{}string' slot='0'/>
+         </first>
+        </fn>
+        <dbl val='1'/>
+        <dbl val='1'/>
+       </fn>
+      </valueOf>
+      <callT line='1434' name='Q{http://www.schematron.com/namespace/sch-check}strip-strings' bSlot='8' flags='t'>
+       <withParam name='Q{}string' flags='c' as='xs:string'>
+        <fn line='1436' name='substring'>
+         <fn ns='' name='string'>
+          <first ns='nvdl=http://purl.oclc.org/dsdl/nvdl iso=http://purl.oclc.org/dsdl/schematron relax=http://relaxng.org/ns/structure/1.0 schold=http://www.ascc.net/xml/schematron xhtml=http://www.w3.org/1999/xhtml xsl=~ xi=http://www.w3.org/2001/XInclude dsdl=http://www.schematron.com/namespace/dsdl crdl=http://purl.oclc.org/dsdl/crepdl/ns/structure/1.0 xslt=http://www.w3.org/1999/XSL/Transform sch-check=http://www.schematron.com/namespace/sch-check dtll=http://www.jenitennison.com/datatypes xlink=http://www.w3.org/1999/xlink'>
+           <varRef name='Q{}string' slot='0'/>
+          </first>
+         </fn>
+         <dbl val='2'/>
+        </fn>
+       </withParam>
+       <withParam name='Q{}mode' flags='c'>
+        <varRef line='1437' name='Q{}mode' slot='1'/>
+       </withParam>
+      </callT>
+     </sequence>
+    </choose>
+   </sequence>
+  </template>
+ </co>
+ <overridden/>
+ <output>
+  <property name='{http://saxon.sf.net/}stylesheet-version' value='10'/>
+ </output>
+ <decimalFormat/>
+</package>
+<?Σ a05696f?>

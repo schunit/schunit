@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2021 Erlend Klakegg Bergheim
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="urn:fdc:schunit.com:2018:v1:internal" xmlns="urn:fdc:schunit.com:2018:v1:internal">
+
+    <!-- Extract -->
+
+    <xs:element name="Extract" type="ExtractType"/>
+
+    <xs:complexType name="ExtractType">
+        <xs:sequence>
+            <xs:element name="Rule" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Result -->
+
+    <xs:element name="Result" type="ResultType"/>
+
+    <xs:complexType name="ResultType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Assert" type="AssertType"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="AssertType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:string"/>
+                <xs:attribute name="status" type="StatusType" use="required"/>
+                <xs:attribute name="location" type="xs:string"/>
+                <xs:attribute name="flag" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="StatusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="success"/>
+            <xs:enumeration value="trigger"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

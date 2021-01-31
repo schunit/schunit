@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns='http://ns.saxonica.com/xslt/export' xmlns:fn='http://www.w3.org/2005/xpath-functions' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:vv='http://saxon.sf.net/generated-variable' xmlns:java-type='http://saxon.sf.net/java-type' when='2020-01-29T20:26:42.147Z' id='0' version='10' packageVersion='1' saxonVersion='9.9.1.6' target='HE' targetVersion='1' relocatable='true' implicit='true'>
+ <co id='0' binds=''>
+  <globalParam name='Q{}schema-id' type='item()*' line='90' module='iso_abstract_expand.xsl' visibility='PUBLIC'>
+   <str val=''/>
+  </globalParam>
+ </co>
+ <co id='1' binds='2'>
+  <template name='Q{http://www.schematron.com/namespace/iae}abstract-to-real' flags='os' line='220' module='iso_abstract_expand.xsl' slots='2'>
+   <sequence role='body' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='221'>
+    <param name='Q{}caller' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='222' name='Q{}is-a' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <forEach line='223'>
+     <filter flags='b'>
+      <slash simple='1'>
+       <root/>
+       <axis name='descendant' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+      </slash>
+      <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+       <axis name='attribute' nodeTest='attribute(Q{}id)'/>
+       <varRef name='Q{}is-a' slot='1'/>
+      </gc10>
+     </filter>
+     <copy line='227' flags='cin'>
+      <sequence role='content'>
+       <choose>
+        <fn name='not'>
+         <fn ns='' name='string'>
+          <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+           <varRef name='Q{}caller' slot='0'/>
+          </first>
+         </fn>
+        </fn>
+        <att line='228' name='id' flags='l'>
+         <convert from='xs:untypedAtomic' to='xs:string'>
+          <cast as='xs:untypedAtomic' emptiable='0'>
+           <fn name='concat'>
+            <fn name='generate-id'>
+             <dot type='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+            </fn>
+            <atomSing card='?' diag='0|1||fn:concat'>
+             <first>
+              <varRef name='Q{}is-a' slot='1'/>
+             </first>
+            </atomSing>
+           </fn>
+          </cast>
+         </convert>
+        </att>
+        <true/>
+        <att line='231' name='id' flags='l'>
+         <convert from='xs:untypedAtomic' to='xs:string'>
+          <cast as='xs:untypedAtomic' emptiable='0'>
+           <fn name='string'>
+            <convert from='xs:anyAtomicType' to='xs:string'>
+             <first>
+              <data>
+               <varRef name='Q{}caller' slot='0'/>
+              </data>
+             </first>
+            </convert>
+           </fn>
+          </cast>
+         </convert>
+        </att>
+       </choose>
+       <applyT line='235' mode='Q{http://www.schematron.com/namespace/iae}do-pattern' bSlot='0'>
+        <axis role='select' name='child' nodeTest='(element() | text())'/>
+        <withParam name='Q{}caller' as='document-node()'>
+         <doc line='236' flags='t' validation='preserve'>
+          <valueOf flags='l'>
+           <convert from='xs:anyAtomicType' to='xs:string'>
+            <first>
+             <data>
+              <varRef name='Q{}caller' slot='0'/>
+             </data>
+            </first>
+           </convert>
+          </valueOf>
+         </doc>
+        </withParam>
+       </applyT>
+      </sequence>
+     </copy>
+    </forEach>
+   </sequence>
+  </template>
+ </co>
+ <co id='3' binds='3 4'>
+  <template name='Q{http://www.schematron.com/namespace/iae}multi-macro-expand' flags='os' line='190' module='iso_abstract_expand.xsl' slots='4'>
+   <sequence role='body' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='191'>
+    <param name='Q{}caller' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='192' name='Q{}text' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <param line='193' name='Q{}paramNumber' slot='2'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='2'/>
+    </param>
+    <choose line='197'>
+     <fn name='exists'>
+      <slash>
+       <filter flags='b'>
+        <slash simple='1'>
+         <root/>
+         <axis name='descendant' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+        </slash>
+        <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+         <axis name='attribute' nodeTest='attribute(Q{}id)'/>
+         <varRef name='Q{}caller' slot='0'/>
+        </gc10>
+       </filter>
+       <filter flags='ip'>
+        <axis name='child' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}param)'/>
+        <varRef name='Q{}paramNumber' slot='2'/>
+       </filter>
+      </slash>
+     </fn>
+     <callT line='199' name='Q{http://www.schematron.com/namespace/iae}multi-macro-expand' bSlot='0' flags='t'>
+      <withParam name='Q{}caller' flags='c'>
+       <varRef line='200' name='Q{}caller' slot='0'/>
+      </withParam>
+      <withParam name='Q{}paramNumber' flags='c' as='xs:anyAtomicType'>
+       <arith10 line='201' op='+' calc='a+a'>
+        <let var='Q{http://saxon.sf.net/}nn2151717' as='xs:anyAtomicType?' slot='3' eval='7'>
+         <atomSing card='?' diag='1|0||+'>
+          <first>
+           <varRef name='Q{}paramNumber' slot='2'/>
+          </first>
+         </atomSing>
+         <choose>
+          <or op='or'>
+           <or op='or'>
+            <or op='or'>
+             <or op='or'>
+              <or op='or'>
+               <instance of='xs:double?'>
+                <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+               </instance>
+               <instance of='xs:decimal?'>
+                <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+               </instance>
+              </or>
+              <instance of='xs:float?'>
+               <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+              </instance>
+             </or>
+             <instance of='xs:string?'>
+              <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+             </instance>
+            </or>
+            <instance of='xs:untypedAtomic?'>
+             <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+            </instance>
+           </or>
+           <instance of='xs:boolean?'>
+            <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+           </instance>
+          </or>
+          <fn name='number'>
+           <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+          </fn>
+          <true/>
+          <varRef name='Q{http://saxon.sf.net/}nn2151717' slot='3'/>
+         </choose>
+        </let>
+        <dbl val='1'/>
+       </arith10>
+      </withParam>
+      <withParam name='Q{}text' flags='c' as='document-node()'>
+       <doc line='203' validation='preserve'>
+        <callT name='Q{http://www.schematron.com/namespace/iae}replace-substring' bSlot='1'>
+         <withParam name='Q{}original' flags='c'>
+          <varRef line='204' name='Q{}text' slot='1'/>
+         </withParam>
+         <withParam name='Q{}substring' flags='c' as='xs:string'>
+          <fn line='206' name='concat'>
+           <str val='$'/>
+           <data>
+            <first>
+             <slash simple='2'>
+              <docOrder intra='1'>
+               <slash>
+                <filter flags='b'>
+                 <slash simple='1'>
+                  <root/>
+                  <axis name='descendant' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+                 </slash>
+                 <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+                  <axis name='attribute' nodeTest='attribute(Q{}id)'/>
+                  <varRef name='Q{}caller' slot='0'/>
+                 </gc10>
+                </filter>
+                <filter flags='ip'>
+                 <axis name='child' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}param)'/>
+                 <varRef name='Q{}paramNumber' slot='2'/>
+                </filter>
+               </slash>
+              </docOrder>
+              <axis name='attribute' nodeTest='attribute(Q{}name)'/>
+             </slash>
+            </first>
+           </data>
+          </fn>
+         </withParam>
+         <withParam name='Q{}replacement' flags='c' as='attribute(Q{}value)*'>
+          <slash line='208' simple='2'>
+           <docOrder intra='1'>
+            <slash>
+             <filter flags='b'>
+              <slash simple='1'>
+               <root/>
+               <axis name='descendant' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+              </slash>
+              <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+               <axis name='attribute' nodeTest='attribute(Q{}id)'/>
+               <varRef name='Q{}caller' slot='0'/>
+              </gc10>
+             </filter>
+             <filter flags='ip'>
+              <axis name='child' nodeTest='element(Q{http://purl.oclc.org/dsdl/schematron}param)'/>
+              <varRef name='Q{}paramNumber' slot='2'/>
+             </filter>
+            </slash>
+           </docOrder>
+           <axis name='attribute' nodeTest='attribute(Q{}value)'/>
+          </slash>
+         </withParam>
+        </callT>
+       </doc>
+      </withParam>
+     </callT>
+     <true/>
+     <valueOf line='213'>
+      <convert from='xs:anyAtomicType' to='xs:string'>
+       <first>
+        <data>
+         <varRef name='Q{}text' slot='1'/>
+        </data>
+       </first>
+      </convert>
+     </valueOf>
+    </choose>
+   </sequence>
+  </template>
+ </co>
+ <co id='5' binds='5 5 1'>
+  <mode name='Q{http://www.schematron.com/namespace/iae}go' onNo='TC' flags='W' patternSlots='0'>
+   <templateRule prec='0' prio='0.5' seq='2' rank='1' minImp='0' slots='0' flags='s' line='115' module='iso_abstract_expand.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element()'/>
+     <fn ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='115' name='empty'>
+      <axis name='ancestor-or-self' nodeTest='Q{http://purl.oclc.org/dsdl/schematron}*'/>
+     </fn>
+    </p.withPredicate>
+    <applyT role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='116' mode='Q{http://www.schematron.com/namespace/iae}go' flags='ti' bSlot='0'>
+     <axis role='select' name='child' nodeTest='node()'/>
+    </applyT>
+   </templateRule>
+   <templateRule prec='0' prio='-1.0' seq='5' rank='0' minImp='0' slots='0' flags='s' line='167' module='iso_abstract_expand.xsl'>
+    <p.nodeTest role='match' test='element()'/>
+    <copy role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='169' flags='cin'>
+     <sequence role='content'>
+      <copyOf flags='vc'>
+       <axis name='attribute' nodeTest='attribute()'/>
+      </copyOf>
+      <applyT line='170' mode='Q{http://www.schematron.com/namespace/iae}go' flags='i' bSlot='1'>
+       <axis role='select' name='child' nodeTest='node()'/>
+      </applyT>
+     </sequence>
+    </copy>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='4' rank='1' minImp='0' slots='0' flags='s' line='153' module='iso_abstract_expand.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+     <axis ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='153' name='attribute' nodeTest='attribute(Q{}is-a)'/>
+    </p.withPredicate>
+    <sequence role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='155'>
+     <comment>
+      <fn name='string-join'>
+       <convert from='xs:untypedAtomic' to='xs:string'>
+        <data>
+         <mergeAdj>
+          <sequence>
+           <valueOf>
+            <str val='Start pattern based on abstract '/>
+           </valueOf>
+           <valueOf>
+            <convert from='xs:untypedAtomic' to='xs:string'>
+             <attVal name='Q{}is-a' chk='0'/>
+            </convert>
+           </valueOf>
+          </sequence>
+         </mergeAdj>
+        </data>
+       </convert>
+       <str val=' '/>
+      </fn>
+     </comment>
+     <callT line='157' name='Q{http://www.schematron.com/namespace/iae}abstract-to-real' bSlot='2' flags='t'>
+      <withParam name='Q{}caller' flags='c' as='attribute(Q{}id)?'>
+       <axis line='158' name='attribute' nodeTest='attribute(Q{}id)'/>
+      </withParam>
+      <withParam name='Q{}is-a' flags='c' as='attribute(Q{}is-a)?'>
+       <axis line='159' name='attribute' nodeTest='attribute(Q{}is-a)'/>
+      </withParam>
+     </callT>
+    </sequence>
+   </templateRule>
+   <templateRule prec='0' prio='0.5' seq='3' rank='1' minImp='0' slots='0' flags='s' line='147' module='iso_abstract_expand.xsl'>
+    <p.withPredicate role='match'>
+     <p.nodeTest test='element(Q{http://purl.oclc.org/dsdl/schematron}pattern)'/>
+     <vc ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='147' op='eq' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+      <cast as='xs:string' emptiable='1'>
+       <attVal name='Q{}abstract' chk='0'/>
+      </cast>
+      <str val='true'/>
+     </vc>
+    </p.withPredicate>
+    <comment role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='148'>
+     <fn name='string-join'>
+      <convert from='xs:untypedAtomic' to='xs:string'>
+       <data>
+        <mergeAdj>
+         <sequence>
+          <valueOf>
+           <str val='Suppressed abstract pattern '/>
+          </valueOf>
+          <valueOf>
+           <convert from='xs:untypedAtomic' to='xs:string'>
+            <attVal name='Q{}id' chk='0'/>
+           </convert>
+          </valueOf>
+          <valueOf>
+           <str val=' was here'/>
+          </valueOf>
+         </sequence>
+        </mergeAdj>
+       </data>
+      </convert>
+      <str val=' '/>
+     </fn>
+    </comment>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='6' binds='0'>
+  <globalVariable name='Q{http://saxon.sf.net/generated-variable}gg1641415002' type='xs:boolean' line='104' module='iso_abstract_expand.xsl' visibility='PRIVATE'>
+   <fn ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='104' name='not'>
+    <fn ns='' name='string'>
+     <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+      <gVarRef name='Q{}schema-id' bSlot='0'/>
+     </first>
+    </fn>
+   </fn>
+  </globalVariable>
+ </co>
+ <co id='2' binds='7 7 2'>
+  <mode name='Q{http://www.schematron.com/namespace/iae}do-pattern' onNo='TC' flags='W' patternSlots='0'>
+   <templateRule prec='0' prio='-0.5' seq='6' rank='0' minImp='0' slots='1' flags='s' line='245' module='iso_abstract_expand.xsl'>
+    <p.nodeTest role='match' test='element()'/>
+    <sequence role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='246'>
+     <param name='Q{}caller' slot='0'>
+      <str role='select' val=''/>
+      <supplied role='conversion' slot='0'/>
+     </param>
+     <copy line='248' flags='cin'>
+      <sequence role='content'>
+       <forEach>
+        <filter flags='b'>
+         <axis name='attribute' nodeTest='attribute()'/>
+         <gc op='=' card='N:1' comp='CCC'>
+          <literal count='4'>
+           <str val='test'/>
+           <str val='context'/>
+           <str val='select'/>
+           <str val='path'/>
+          </literal>
+          <fn name='name'>
+           <dot type='attribute()'/>
+          </fn>
+         </gc>
+        </filter>
+        <compAtt line='249' flags='l'>
+         <fn role='name' name='name'>
+          <dot type='attribute()'/>
+         </fn>
+         <fn role='select' line='250' name='string-join'>
+          <convert from='xs:anyAtomicType' to='xs:string'>
+           <data>
+            <mergeAdj>
+             <callT name='Q{http://www.schematron.com/namespace/iae}macro-expand' bSlot='0'>
+              <withParam name='Q{}text' flags='c' as='document-node()'>
+               <doc line='251' flags='t' validation='preserve'>
+                <valueOf flags='l'>
+                 <convert from='xs:untypedAtomic' to='xs:string'>
+                  <data>
+                   <dot type='attribute()'/>
+                  </data>
+                 </convert>
+                </valueOf>
+               </doc>
+              </withParam>
+              <withParam name='Q{}caller' flags='c' as='document-node()'>
+               <doc line='252' flags='t' validation='preserve'>
+                <valueOf flags='l'>
+                 <convert from='xs:anyAtomicType' to='xs:string'>
+                  <first>
+                   <data>
+                    <varRef name='Q{}caller' slot='0'/>
+                   </data>
+                  </first>
+                 </convert>
+                </valueOf>
+               </doc>
+              </withParam>
+             </callT>
+            </mergeAdj>
+           </data>
+          </convert>
+          <str val=''/>
+         </fn>
+        </compAtt>
+       </forEach>
+       <copyOf line='256' flags='vc'>
+        <filter flags='b'>
+         <filter flags='b'>
+          <filter flags='b'>
+           <filter flags='b'>
+            <axis name='attribute' nodeTest='attribute()'/>
+            <vc op='ne' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+             <fn name='name'>
+              <dot type='attribute()'/>
+             </fn>
+             <str val='test'/>
+            </vc>
+           </filter>
+           <vc op='ne' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+            <fn name='name'>
+             <dot type='attribute()'/>
+            </fn>
+            <str val='context'/>
+           </vc>
+          </filter>
+          <vc op='ne' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+           <fn name='name'>
+            <dot type='attribute()'/>
+           </fn>
+           <str val='select'/>
+          </vc>
+         </filter>
+         <vc op='ne' onEmpty='0' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+          <fn name='name'>
+           <dot type='attribute()'/>
+          </fn>
+          <str val='path'/>
+         </vc>
+        </filter>
+       </copyOf>
+       <forEach line='257'>
+        <axis name='child' nodeTest='node()'/>
+        <choose line='263'>
+         <fn name='exists'>
+          <axis name='self' nodeTest='text()'/>
+         </fn>
+         <callT line='264' name='Q{http://www.schematron.com/namespace/iae}macro-expand' bSlot='1'>
+          <withParam name='Q{}text' flags='c' as='document-node()'>
+           <doc line='265' flags='t' validation='preserve'>
+            <valueOf flags='l'>
+             <convert from='xs:anyAtomicType' to='xs:string'>
+              <data>
+               <dot type='node()'/>
+              </data>
+             </convert>
+            </valueOf>
+           </doc>
+          </withParam>
+          <withParam name='Q{}caller' flags='c' as='document-node()'>
+           <doc line='266' flags='t' validation='preserve'>
+            <valueOf flags='l'>
+             <convert from='xs:anyAtomicType' to='xs:string'>
+              <first>
+               <data>
+                <varRef name='Q{}caller' slot='0'/>
+               </data>
+              </first>
+             </convert>
+            </valueOf>
+           </doc>
+          </withParam>
+         </callT>
+         <true/>
+         <applyT line='270' mode='Q{http://www.schematron.com/namespace/iae}do-pattern' bSlot='2'>
+          <dot role='select' type='node()'/>
+          <withParam name='Q{}caller' as='document-node()'>
+           <doc line='271' flags='t' validation='preserve'>
+            <valueOf flags='l'>
+             <convert from='xs:anyAtomicType' to='xs:string'>
+              <first>
+               <data>
+                <varRef name='Q{}caller' slot='0'/>
+               </data>
+              </first>
+             </convert>
+            </valueOf>
+           </doc>
+          </withParam>
+         </applyT>
+        </choose>
+       </forEach>
+      </sequence>
+     </copy>
+    </sequence>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='7' binds='3'>
+  <template name='Q{http://www.schematron.com/namespace/iae}macro-expand' flags='os' line='176' module='iso_abstract_expand.xsl' slots='2'>
+   <sequence role='body' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='177'>
+    <param name='Q{}caller' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='178' name='Q{}text' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <callT line='179' name='Q{http://www.schematron.com/namespace/iae}multi-macro-expand' bSlot='0' flags='t'>
+     <withParam name='Q{}caller' flags='c'>
+      <varRef line='180' name='Q{}caller' slot='0'/>
+     </withParam>
+     <withParam name='Q{}text' flags='c'>
+      <varRef line='181' name='Q{}text' slot='1'/>
+     </withParam>
+     <withParam name='Q{}paramNumber' flags='c' as='xs:integer'>
+      <int val='1'/>
+     </withParam>
+    </callT>
+   </sequence>
+  </template>
+ </co>
+ <co id='8' binds='5 6 0 5'>
+  <mode onNo='TC' flags='dW' patternSlots='0'>
+   <templateRule prec='0' prio='-0.5' seq='0' rank='0' minImp='0' slots='0' flags='s' line='94' module='iso_abstract_expand.xsl'>
+    <p.nodeTest role='match' test='document-node()'/>
+    <applyT role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='95' mode='Q{http://www.schematron.com/namespace/iae}go' flags='t' bSlot='0'>
+     <dot role='select' type='document-node()'/>
+    </applyT>
+   </templateRule>
+   <templateRule prec='0' prio='0.0' seq='1' rank='1' minImp='0' slots='0' flags='s' line='103' module='iso_abstract_expand.xsl'>
+    <p.nodeTest role='match' test='element(Q{http://purl.oclc.org/dsdl/schematron}schema)'/>
+    <choose role='action' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='104'>
+     <or op='or'>
+      <gVarRef name='Q{http://saxon.sf.net/generated-variable}gg1641415002' bSlot='1'/>
+      <gc10 op='=' cardinality='many-to-many (1.0)' comp='GAC|http://www.w3.org/2005/xpath-functions/collation/codepoint'>
+       <axis name='attribute' nodeTest='attribute(Q{}id)'/>
+       <gVarRef name='Q{}schema-id' bSlot='2'/>
+      </gc10>
+     </or>
+     <copy line='106' flags='cin'>
+      <sequence role='content'>
+       <copyOf flags='vc'>
+        <axis name='attribute' nodeTest='attribute()'/>
+       </copyOf>
+       <applyT line='107' mode='Q{http://www.schematron.com/namespace/iae}go' flags='i' bSlot='3'>
+        <axis role='select' name='child' nodeTest='node()'/>
+       </applyT>
+      </sequence>
+     </copy>
+    </choose>
+   </templateRule>
+  </mode>
+ </co>
+ <co id='4' binds='4'>
+  <template name='Q{http://www.schematron.com/namespace/iae}replace-substring' flags='os' line='281' module='iso_abstract_expand.xsl' slots='3'>
+   <sequence role='body' ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae' line='282'>
+    <param name='Q{}original' slot='0'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='0'/>
+    </param>
+    <param line='283' name='Q{}substring' slot='1'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='1'/>
+    </param>
+    <param line='284' name='Q{}replacement' slot='2'>
+     <str role='select' val=''/>
+     <supplied role='conversion' slot='2'/>
+    </param>
+    <choose line='287'>
+     <fn name='not'>
+      <varRef name='Q{}original' slot='0'/>
+     </fn>
+     <empty/>
+     <fn line='288' name='not'>
+      <fn name='string'>
+       <first>
+        <varRef name='Q{}substring' slot='1'/>
+       </first>
+      </fn>
+     </fn>
+     <valueOf line='289'>
+      <convert from='xs:anyAtomicType' to='xs:string'>
+       <first>
+        <data>
+         <varRef name='Q{}original' slot='0'/>
+        </data>
+       </first>
+      </convert>
+     </valueOf>
+     <fn ns='' line='291' name='contains'>
+      <fn name='string'>
+       <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+        <varRef name='Q{}original' slot='0'/>
+       </first>
+      </fn>
+      <fn name='string'>
+       <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+        <varRef name='Q{}substring' slot='1'/>
+       </first>
+      </fn>
+     </fn>
+     <sequence line='295'>
+      <valueOf>
+       <fn line='292' name='substring-before'>
+        <fn ns='' name='string'>
+         <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+          <varRef name='Q{}original' slot='0'/>
+         </first>
+        </fn>
+        <fn ns='' name='string'>
+         <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+          <varRef name='Q{}substring' slot='1'/>
+         </first>
+        </fn>
+       </fn>
+      </valueOf>
+      <valueOf line='296'>
+       <convert from='xs:anyAtomicType' to='xs:string'>
+        <first>
+         <data>
+          <varRef name='Q{}replacement' slot='2'/>
+         </data>
+        </first>
+       </convert>
+      </valueOf>
+      <callT line='298' name='Q{http://www.schematron.com/namespace/iae}replace-substring' bSlot='0' flags='t'>
+       <withParam name='Q{}original' flags='c' as='xs:string'>
+        <fn line='293' name='substring-after'>
+         <fn ns='' name='string'>
+          <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+           <varRef name='Q{}original' slot='0'/>
+          </first>
+         </fn>
+         <fn ns='' name='string'>
+          <first ns='xsl=~ nvdl=http://purl.oclc.org/dsdl/nvdl xslt=http://www.w3.org/1999/XSL/Transform iso=http://purl.oclc.org/dsdl/schematron iae=http://www.schematron.com/namespace/iae'>
+           <varRef name='Q{}substring' slot='1'/>
+          </first>
+         </fn>
+        </fn>
+       </withParam>
+       <withParam name='Q{}substring' flags='c'>
+        <varRef line='300' name='Q{}substring' slot='1'/>
+       </withParam>
+       <withParam name='Q{}replacement' flags='c'>
+        <varRef line='301' name='Q{}replacement' slot='2'/>
+       </withParam>
+      </callT>
+     </sequence>
+     <true/>
+     <valueOf line='306'>
+      <convert from='xs:anyAtomicType' to='xs:string'>
+       <first>
+        <data>
+         <varRef name='Q{}original' slot='0'/>
+        </data>
+       </first>
+      </convert>
+     </valueOf>
+    </choose>
+   </sequence>
+  </template>
+ </co>
+ <overridden/>
+ <output>
+  <property name='{http://saxon.sf.net/}stylesheet-version' value='10'/>
+ </output>
+ <decimalFormat/>
+</package>
+<?Σ 52217772?>
