@@ -22,34 +22,45 @@ import com.schunit.core.loader.TestLoader;
 import lombok.Getter;
 
 import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
+/**
+ * Repository for test instances.
+ */
 public class TestRepository implements AutoCloseable {
 
+    /**
+     * Loader used to load test instances.
+     */
     @Inject
     private TestLoader loader;
 
+    /**
+     * Instances part of repository.
+     */
     @Getter
     private final List<Test> instances = new ArrayList<>();
 
-    public void load(Path path) throws SchunitException, IOException {
-        if (Files.isReadable(path)) {
-            loadFile(path);
-        } else {
-            for (Path p : Files.list(path).sorted().collect(Collectors.toList()))
-                loadFile(p);
-        }
+    /**
+     * Load test(s) from test file.
+     *
+     * @param path Path to file containing test(s).
+     * @return Loaded test instances.
+     * @throws SchunitException Exceptions related to loading of test instance(s).
+     */
+    public List<Test> load(Path path) throws SchunitException {
+        List<Test> result = loader.load(path);
+
+        instances.addAll(result);
+
+        return result;
     }
 
-    private void loadFile(Path path) throws SchunitException {
-        instances.addAll(loader.load(path));
-    }
-
+    /**
+     * Clear repository instances.
+     */
     @Override
     public void close() {
         instances.clear();

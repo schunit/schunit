@@ -20,48 +20,145 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.schunit.core.api.Test;
 import com.schunit.core.lang.SchunitException;
+import com.schunit.core.loader.TestLoader;
 import com.schunit.core.repository.SchematronRepository;
 import com.schunit.core.repository.TestRepository;
+import com.schunit.core.util.ExtraFiles;
 
 import javax.inject.Inject;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 
+/**
+ * SchUnit client.
+ */
 public class SchunitClient implements AutoCloseable {
 
+    /**
+     * Guice injector.
+     */
     private static final Injector INJECTOR = Guice.createInjector();
 
+    /**
+     * Modes available to this client.
+     */
+    public enum Mode {
+        BASIC,
+        ADVANCED,
+    }
+
+    /**
+     * Load a basic instance of the client.
+     *
+     * @param path Project folder
+     * @return Basic client instance
+     */
     public static SchunitClient newInstance(Path path) {
+        return newInstance(path, Mode.BASIC);
+    }
+
+    /**
+     * Load an instance of the client.
+     *
+     * @param path Project folder
+     * @param mode Client mode
+     * @return Client instance
+     */
+    public static SchunitClient newInstance(Path path, Mode mode) {
         SchunitClient schunitClient = INJECTOR.getInstance(SchunitClient.class);
         schunitClient.path = path;
+        schunitClient.mode = mode;
 
         return schunitClient;
     }
 
+    /**
+     * Repository of loaded Schematron files.
+     */
     @Inject
     private SchematronRepository schematronRepository;
 
+    /**
+     * Repository of loaded tests. Used in advanced mode only.
+     */
     @Inject
     private TestRepository testRepository;
 
+    /**
+     * Loader of tests. Used in basic mode only.
+     */
+    @Inject
+    private TestLoader testLoader;
+
+    /**
+     * Project path.
+     */
     private Path path;
 
+    /**
+     * Client mode.
+     */
+    private Mode mode;
+
+    /**
+     * Load schematron.
+     *
+     * @param path Path to Schematron file or folder of Schematron files.
+     * @throws SchunitException Exceptions related to loading of Schematron instance(s).
+     * @throws IOException      Exceptions related to IO.
+     */
     public void schematron(Path path) throws SchunitException, IOException {
-        schematronRepository.load(path);
+        for (Path p : ExtraFiles.expand(path))
+            schematronRepository.load(p);
+
+        if (Mode.ADVANCED.equals(mode))
+            verify();
     }
 
+    /**
+     * Load test(s).
+     *
+     * @param path Path to test file or folder of test files.
+     * @throws SchunitException Exceptions related to loading of test instance(s).
+     * @throws IOException      Exceptions related to IO.
+     */
     public void test(Path path) throws SchunitException, IOException {
-        testRepository.load(path);
-    }
+        for (Path p : ExtraFiles.expand(path)) {
+            List<Test> tests;
 
-    public void verify() {
-        for (Test test : testRepository.getInstances()) {
+            switch (mode) {
+                case BASIC:
+                    tests = testLoader.load(p);
+                    break;
+                case ADVANCED:
+                    tests = testRepository.load(p);
+                    break;
+                default:
+                    throw new IllegalStateException("Unknown mode.");
+            }
 
+            schematronRepository.validate(tests);
         }
     }
 
+    /**
+     * Verify content in repositories.
+     *
+     * @throws SchunitException Exceptions related to validation and verification of test instance(s).
+     */
+    public void verify() throws SchunitException {
+        if (mode.equals(Mode.BASIC))
+            throw new SchunitException("Not supported in basic mode.");
+
+        schematronRepository.validate(testRepository.getInstances());
+    }
+
+    /**
+     * Clear content in repositories.
+     */
     @Override
-    public void close() throws Exception {
+    public void close() {
         schematronRepository.close();
         schematronRepository = null;
 

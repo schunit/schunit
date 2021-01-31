@@ -29,12 +29,23 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Class to provide some convenience while working with content.
+ */
 public class Content {
 
+    /**
+     * Byte content of instance.
+     */
     private final byte[] bytes;
 
     public static Content ofResource(String resource) throws IOException {
-        return of(Content.class.getResourceAsStream(resource));
+        InputStream inputStream = Content.class.getResourceAsStream(resource);
+
+        if (inputStream == null)
+            throw new IOException(String.format("Unable to load resource '%s'.", resource));
+
+        return of(inputStream);
     }
 
     public static Content of(byte[] bytes) {
@@ -55,6 +66,11 @@ public class Content {
         }
     }
 
+    /**
+     * Simple private constructor taking content.
+     *
+     * @param bytes Actual content.
+     */
     private Content(byte[] bytes) {
         this.bytes = bytes;
     }

@@ -18,51 +18,103 @@ package com.schunit.core.repository;
 
 import com.schunit.core.api.Schematron;
 import com.schunit.core.api.Test;
+import com.schunit.core.jaxb.v1.internal.ResultType;
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.loader.SchematronLoader;
+import com.schunit.core.model.Content;
 
 import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Repository for Schematron instances.
+ */
 public class SchematronRepository implements AutoCloseable {
 
+    /**
+     * Loader used to load Schematron instances.
+     */
     @Inject
     private SchematronLoader loader;
 
+    /**
+     * Instances part of repository.
+     */
     private final List<Schematron> instances = new ArrayList<>();
 
-    private List<Schematron> getFor(Test test) {
-        List<String> scope = test.getScope();
-
-        if (scope.size() == 0)
-            return Collections.unmodifiableList(instances);
-
-        return instances.stream()
-                .filter(s -> s.getRules().stream().anyMatch(scope::contains))
-                .collect(Collectors.toList());
-    }
-
-    public void load(Path path) throws SchunitException, IOException {
-        if (Files.isReadable(path)) {
-            loadFile(path);
-        } else {
-            for (Path p : Files.list(path).sorted().collect(Collectors.toList()))
-                loadFile(p);
-        }
-    }
-
-    private void loadFile(Path path) throws SchunitException {
+    public void load(Path path) throws SchunitException {
         instances.add(loader.load(path));
     }
 
+    public void validate(List<Test> tests) throws SchunitException {
+        for (Test test : tests)
+            validate(test);
+    }
+
+    public void validate(Test test) throws SchunitException {
+        // TODO
+        test.process(forTest(test).validate(test.getContent()));
+    }
+
+    /**
+     * Load Schematron instances relevant to a given test.
+     *
+     * @param test Test to be found Schematron instances for.
+     * @return Schematron instance wrapping relevant Schematron instances.
+     */
+    private Schematron forTest(Test test) {
+        List<String> scope = test.getScope();
+
+        if (scope.size() == 0)
+            return new SchematronGroup(instances);
+
+        return new SchematronGroup(instances.stream()
+                .filter(s -> s.getRules().stream().anyMatch(scope::contains))
+                .collect(Collectors.toList()));
+    }
+
+    /**
+     * Clear repository instances.
+     */
     @Override
     public void close() {
         instances.clear();
+    }
+
+    @SuppressWarnings("InnerClassMayBeStatic")
+    private class SchematronGroup implements Schematron {
+
+        private final List<Schematron> schematrons;
+
+        public SchematronGroup(List<Schematron> schematrons) {
+            this.schematrons = schematrons;
+        }
+
+        @Override
+        public Path getPath() {
+            throw new IllegalStateException("Path is not provided for a group of Schematron instances");
+        }
+
+        @Override
+        public List<String> getRules() {
+            return schematrons.stream()
+                    .map(Schematron::getRules)
+                    .flatMap(Collection::stream)
+                    .collect(Collectors.toList());
+        }
+
+        @Override
+        public ResultType validate(Content content) throws SchunitException {
+            ResultType resultType = new ResultType();
+
+            for (Schematron schematron : schematrons)
+                resultType.getAssert().addAll(schematron.validate(content).getAssert());
+
+            return resultType;
+        }
     }
 }

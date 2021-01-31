@@ -14,22 +14,7 @@
  * limitations under the License.
  */
 
-package com.schunit.core.api;
+package com.schunit.core.model;
 
-import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.model.Content;
-
-import java.nio.file.Path;
-import java.util.List;
-
-public interface Test {
-
-    Path getPath();
-
-    List<String> getScope();
-
-    Content getContent();
-
-    void process(ResultType source);
-
+public class Result {
 }

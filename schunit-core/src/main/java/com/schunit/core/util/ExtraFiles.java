@@ -14,22 +14,28 @@
  * limitations under the License.
  */
 
-package com.schunit.core.api;
+package com.schunit.core.util;
 
-import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.model.Content;
-
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public interface Test {
+/**
+ * Extra functionality for file handling.
+ */
+public interface ExtraFiles {
 
-    Path getPath();
-
-    List<String> getScope();
-
-    Content getContent();
-
-    void process(ResultType source);
-
+    static List<Path> expand(Path path) throws IOException {
+        if (Files.isRegularFile(path)) {
+            return Collections.singletonList(path);
+        } else {
+            return Files.list(path)
+                    .filter(Files::isRegularFile)
+                    .sorted()
+                    .collect(Collectors.toList());
+        }
+    }
 }

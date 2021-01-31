@@ -26,13 +26,11 @@ import com.schunit.core.util.JaxbInstance;
 import com.schunit.core.util.SaxonHelper;
 import com.schunit.core.util.XsltProcessor;
 import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import java.nio.file.Path;
 import java.util.List;
 
-@Slf4j
 @Singleton
 public class SchematronLoader {
 

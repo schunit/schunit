@@ -20,6 +20,7 @@ import com.google.inject.Singleton;
 import com.schunit.core.api.Test;
 import com.schunit.core.jaxb.v1.TestType;
 import com.schunit.core.jaxb.v1.TestsType;
+import com.schunit.core.jaxb.v1.internal.ResultType;
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.model.Content;
 import com.schunit.core.util.JaxbInstance;
@@ -35,7 +36,6 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Singleton
@@ -93,20 +93,27 @@ public class TestLoader {
         private final Path path;
 
         private final String id;
-        private final String description;
-        private final Content xml;
 
-        public Instance(Path path, TestType source, Content xml) {
+        private final String description;
+
+        @Getter
+        private final List<String> scope;
+
+        @Getter
+        private final Content content;
+
+        public Instance(Path path, TestType source, Content content) {
             this.path = path;
 
             this.id = source.getId();
             this.description = source.getDescription();
-            this.xml = xml;
+            this.scope = source.getScope();
+            this.content = content;
         }
 
         @Override
-        public List<String> getScope() {
-            return Collections.emptyList();
+        public void process(ResultType source) {
+            // TODO
         }
     }
 }
