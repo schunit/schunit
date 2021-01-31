@@ -36,6 +36,8 @@ public class SchunitClientTest {
             Assert.assertNotNull(tests);
             Assert.assertEquals(tests.size(), 1);
 
+            Assert.assertEquals(tests.get(0).getErrors().size(), 0);
+
             List<Result> units = client.test(Paths.get("src/test/resources/project/simple/unit"));
             Assert.assertNotNull(units);
             Assert.assertEquals(units.size(), 5);

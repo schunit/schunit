@@ -24,21 +24,22 @@ import java.util.stream.Collectors;
 
 public class Expectation {
 
-    private final Map<String, Integer> registery;
+    private final Map<String, Integer> registry;
 
     private final Result result;
 
     public Expectation(Result result, List<ExpectationType> expectations) {
         this.result = result;
-        this.registery = expectations.stream()
+        this.registry = expectations.stream()
+                .filter(e -> !e.getValue().equals("#ignore"))
                 .collect(Collectors.toMap(ExpectationType::getValue, ExpectationType::getCount));
     }
 
     public void register(String id, String message, Error.Type errorType) {
-        if (registery.containsKey(id)) {
-            if (registery.get(id) > 0)
+        if (registry.containsKey(id)) {
+            if (registry.get(id) > 0)
                 // Expected
-                registery.put(id, registery.get(id) - 1);
+                registry.put(id, registry.get(id) - 1);
             else
                 // Expected but not this many times
                 result.addError(errorType, id, message);
@@ -48,9 +49,9 @@ public class Expectation {
     }
 
     public void finish(Error.Type errorType) {
-        for (String id : registery.keySet())
-            if (registery.get(id) != 0)
+        for (String id : registry.keySet())
+            if (registry.get(id) != 0)
                 // Expected but not seen
-                result.addError(errorType, id, null, registery.get(id));
+                result.addError(errorType, id, null, registry.get(id));
     }
 }

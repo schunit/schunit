@@ -40,12 +40,12 @@ public class Result {
         this.description = description;
     }
 
-    public void addError(Error.Type type, String id, String description) {
-        addError(type, id, description, null);
+    public void addError(Error.Type type, String id, String message) {
+        addError(type, id, message, null);
     }
 
-    public void addError(Error.Type type, String id, String description, Integer count) {
-        this.errors.add(new Error(type, id, type.name(), count));
+    public void addError(Error.Type type, String id, String message, Integer count) {
+        this.errors.add(new Error(type, id, message, count));
     }
 
     public List<Error> getErrors() {
