@@ -21,4 +21,4 @@ jobs:
         java-version: 1.8
 
     - name: Build with Maven
-      run: mvn -B --no-transfer-progress package
+      run: mvn -B --no-transfer-progress package -P dist

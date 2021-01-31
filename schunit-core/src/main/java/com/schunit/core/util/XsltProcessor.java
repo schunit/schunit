@@ -18,17 +18,16 @@ package com.schunit.core.util;
 
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.model.Content;
-import net.sf.saxon.s9api.Processor;
-import net.sf.saxon.s9api.SaxonApiException;
-import net.sf.saxon.s9api.XsltExecutable;
-import net.sf.saxon.s9api.XsltTransformer;
+import net.sf.saxon.s9api.*;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class XsltProcessor {
@@ -50,20 +49,34 @@ public class XsltProcessor {
     }
 
     public Content process(Path path) throws SchunitException {
-        return process(new StreamSource(path.toFile()));
+        return process(path, Collections.emptyMap());
+    }
+
+    public Content process(Path path, Map<String, String> parameters) throws SchunitException {
+        return process(new StreamSource(path.toFile()), parameters);
     }
 
     public Content process(Content content) throws SchunitException {
-        return process(content.asSource());
+        return process(content.asSource(), Collections.emptyMap());
     }
 
-    private Content process(Source source) throws SchunitException {
+    public Content process(Content content, Map<String, String> parameters) throws SchunitException {
+        return process(content.asSource(), parameters);
+    }
+
+    private Content process(Source source, Map<String, String> parameters) throws SchunitException {
         List<XsltTransformer> xsltTransformers = executables.stream()
                 .map(XsltExecutable::load)
                 .collect(Collectors.toList());
 
-        for (int i = 0; i < xsltTransformers.size() - 1; i++) {
-            xsltTransformers.get(i).setDestination(xsltTransformers.get(i + 1));
+        for (int i = 0; i < xsltTransformers.size(); i++) {
+            XsltTransformer xsltTransformer = xsltTransformers.get(i);
+
+            if (i < xsltTransformers.size() - 1)
+                xsltTransformer.setDestination(xsltTransformers.get(i + 1));
+
+            for (Map.Entry<String, String> param : parameters.entrySet())
+                xsltTransformer.setParameter(new QName(param.getKey()), new XdmAtomicValue(param.getValue()));
         }
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

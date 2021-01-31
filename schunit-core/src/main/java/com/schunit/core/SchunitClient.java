@@ -21,6 +21,7 @@ import com.google.inject.Injector;
 import com.schunit.core.api.Test;
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.loader.TestLoader;
+import com.schunit.core.model.Result;
 import com.schunit.core.repository.SchematronRepository;
 import com.schunit.core.repository.TestRepository;
 import com.schunit.core.util.ExtraFiles;
@@ -28,6 +29,7 @@ import com.schunit.core.util.ExtraFiles;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -108,12 +110,14 @@ public class SchunitClient implements AutoCloseable {
      * @throws SchunitException Exceptions related to loading of Schematron instance(s).
      * @throws IOException      Exceptions related to IO.
      */
-    public void schematron(Path path) throws SchunitException, IOException {
+    public List<Result> schematron(Path path) throws SchunitException, IOException {
         for (Path p : ExtraFiles.expand(path))
             schematronRepository.load(p);
 
         if (Mode.ADVANCED.equals(mode))
-            verify();
+            return verify();
+
+        return null;
     }
 
     /**
@@ -123,7 +127,9 @@ public class SchunitClient implements AutoCloseable {
      * @throws SchunitException Exceptions related to loading of test instance(s).
      * @throws IOException      Exceptions related to IO.
      */
-    public void test(Path path) throws SchunitException, IOException {
+    public List<Result> test(Path path) throws SchunitException, IOException {
+        List<Result> results = new ArrayList<>();
+
         for (Path p : ExtraFiles.expand(path)) {
             List<Test> tests;
 
@@ -138,8 +144,10 @@ public class SchunitClient implements AutoCloseable {
                     throw new IllegalStateException("Unknown mode.");
             }
 
-            schematronRepository.validate(tests);
+            results.addAll(schematronRepository.validate(tests));
         }
+
+        return results;
     }
 
     /**
@@ -147,11 +155,11 @@ public class SchunitClient implements AutoCloseable {
      *
      * @throws SchunitException Exceptions related to validation and verification of test instance(s).
      */
-    public void verify() throws SchunitException {
+    public List<Result> verify() throws SchunitException {
         if (mode.equals(Mode.BASIC))
             throw new SchunitException("Not supported in basic mode.");
 
-        schematronRepository.validate(testRepository.getInstances());
+        return schematronRepository.validate(testRepository.getInstances());
     }
 
     /**

@@ -16,17 +16,16 @@
 
 package com.schunit.core.loader;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.inject.Singleton;
 import com.schunit.core.api.Test;
 import com.schunit.core.jaxb.v1.TestType;
 import com.schunit.core.jaxb.v1.TestsType;
-import com.schunit.core.jaxb.v1.internal.ResultType;
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.model.Content;
 import com.schunit.core.util.JaxbInstance;
 import com.schunit.core.util.SaxonHelper;
 import com.schunit.core.util.XsltProcessor;
-import lombok.Getter;
 
 import javax.inject.Inject;
 import javax.xml.transform.Transformer;
@@ -36,6 +35,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Singleton
@@ -62,13 +62,15 @@ public class TestLoader {
     }
 
     public List<Test> load(Path path) throws SchunitException {
-        TestsType tests = processor.process(path).as(jaxbInstance, TestsType.class);
+        String context = path.toFile().getName().split("\\.(?=[^\\.]+$)")[0];
+
+        TestsType tests = processor.process(path, ImmutableMap.of("context", context)).as(jaxbInstance, TestsType.class);
 
         List<Test> result = new ArrayList<>();
 
         for (TestType source : tests.getTest())
             if (source.isEnabled())
-                result.add(new Instance(path, source, extractXml(source)));
+                result.add(new TestInstance(path, source, extractXml(source)));
 
         return result;
     }
@@ -84,36 +86,5 @@ public class TestLoader {
         }
 
         return Content.of(baos);
-    }
-
-    @SuppressWarnings("InnerClassMayBeStatic")
-    private class Instance implements Test {
-
-        @Getter
-        private final Path path;
-
-        private final String id;
-
-        private final String description;
-
-        @Getter
-        private final List<String> scope;
-
-        @Getter
-        private final Content content;
-
-        public Instance(Path path, TestType source, Content content) {
-            this.path = path;
-
-            this.id = source.getId();
-            this.description = source.getDescription();
-            this.scope = source.getScope();
-            this.content = content;
-        }
-
-        @Override
-        public void process(ResultType source) {
-            // TODO
-        }
     }
 }

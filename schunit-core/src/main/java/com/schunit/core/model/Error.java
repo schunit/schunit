@@ -14,23 +14,29 @@
  * limitations under the License.
  */
 
-package com.schunit.core.api;
+package com.schunit.core.model;
 
-import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.model.Content;
-import com.schunit.core.model.Result;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-import java.nio.file.Path;
-import java.util.List;
+@Getter
+@AllArgsConstructor
+public class Error {
 
-public interface Test {
+    public enum Type {
+        UNKNOWN_ID,
+        UNEXPECTED_TRIGGER,
+        UNEXPECTED_SUCCESS,
+        EXPECTED_TRIGGER,
+        EXPECTED_SUCCESS,
+    }
 
-    Path getPath();
+    private final Type type;
 
-    List<String> getScope();
+    private final String id;
 
-    Content getContent();
+    private final String message;
 
-    Result process(ResultType source);
+    private final Integer count;
 
 }

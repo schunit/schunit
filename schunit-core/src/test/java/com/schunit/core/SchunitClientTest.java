@@ -17,10 +17,13 @@
 package com.schunit.core;
 
 import com.schunit.core.lang.SchunitException;
+import com.schunit.core.model.Result;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class SchunitClientTest {
 
@@ -28,8 +31,14 @@ public class SchunitClientTest {
     public void simple() throws SchunitException, IOException {
         try (SchunitClient client = SchunitClient.newInstance(Paths.get("src/test/resources/project/simple"))) {
             client.schematron(Paths.get("src/test/resources/project/simple/sch"));
-            client.test(Paths.get("src/test/resources/project/simple/test"));
-            client.test(Paths.get("src/test/resources/project/simple/unit"));
+
+            List<Result> tests = client.test(Paths.get("src/test/resources/project/simple/test"));
+            Assert.assertNotNull(tests);
+            Assert.assertEquals(tests.size(), 1);
+
+            List<Result> units = client.test(Paths.get("src/test/resources/project/simple/unit"));
+            Assert.assertNotNull(units);
+            Assert.assertEquals(units.size(), 5);
         }
     }
 

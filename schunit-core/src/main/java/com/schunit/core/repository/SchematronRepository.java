@@ -22,6 +22,7 @@ import com.schunit.core.jaxb.v1.internal.ResultType;
 import com.schunit.core.lang.SchunitException;
 import com.schunit.core.loader.SchematronLoader;
 import com.schunit.core.model.Content;
+import com.schunit.core.model.Result;
 
 import javax.inject.Inject;
 import java.nio.file.Path;
@@ -50,14 +51,17 @@ public class SchematronRepository implements AutoCloseable {
         instances.add(loader.load(path));
     }
 
-    public void validate(List<Test> tests) throws SchunitException {
+    public List<Result> validate(List<Test> tests) throws SchunitException {
+        List<Result> results = new ArrayList<>();
+
         for (Test test : tests)
-            validate(test);
+            results.add(validate(test));
+
+        return results;
     }
 
-    public void validate(Test test) throws SchunitException {
-        // TODO
-        test.process(forTest(test).validate(test.getContent()));
+    public Result validate(Test test) throws SchunitException {
+        return test.process(forTest(test).validate(test.getContent()));
     }
 
     /**
