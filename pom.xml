@@ -33,6 +33,13 @@
         <java.encoding>UTF-8</java.encoding>
     </properties>
 
+    <scm>
+        <connection>scm:git:git@github.com:schunit/schunit.git</connection>
+        <url>scm:git:git@github.com:schunit/schunit.git</url>
+        <developerConnection>scm:git:git@github.com:schunit/schunit.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.kohsuke.metainf-services</groupId>
@@ -140,6 +147,11 @@
                         <exclude>**/jaxb/**</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
