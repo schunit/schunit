@@ -24,10 +24,22 @@ import java.util.stream.Collectors;
 
 public class Expectation {
 
+    /**
+     * Representation of expectations.
+     */
     private final Map<String, Integer> registry;
 
+    /**
+     * The result instance of where to put errors.
+     */
     private final Result result;
 
+    /**
+     * Initiation for a given test.
+     *
+     * @param result       The result instance to use.
+     * @param expectations Expectations as provided by the test.
+     */
     public Expectation(Result result, List<ExpectationType> expectations) {
         this.result = result;
         this.registry = expectations.stream()

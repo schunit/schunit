@@ -20,7 +20,7 @@ import com.google.inject.Singleton;
 import com.schunit.core.api.Schematron;
 import com.schunit.core.jaxb.v1.internal.ExtractType;
 import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 import com.schunit.core.util.JaxbInstance;
 import com.schunit.core.util.SaxonHelper;
@@ -31,6 +31,9 @@ import javax.inject.Inject;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * This loader performs all loading of Schematron instances.
+ */
 @Singleton
 public class SchematronLoader {
 
@@ -45,7 +48,7 @@ public class SchematronLoader {
     private JaxbInstance jaxbInstance;
 
     @Inject
-    public void init() throws SchunitException {
+    public void init() throws SchUnitException {
         // Loading JAXB context
         jaxbInstance = JaxbInstance.of(ExtractType.class, ResultType.class);
 
@@ -62,7 +65,7 @@ public class SchematronLoader {
                 "/xslt/schunit/svrl-processor.xslt");
     }
 
-    public Schematron load(Path path) throws SchunitException {
+    public Schematron load(Path path) throws SchUnitException {
         // Load and prepare Schematron file
         Content processed = preapreProcessor.process(path);
 
@@ -94,7 +97,7 @@ public class SchematronLoader {
         }
 
         @Override
-        public ResultType validate(Content content) throws SchunitException {
+        public ResultType validate(Content content) throws SchUnitException {
             return xsltProcessor.append(svrlProcessor).process(content).as(jaxbInstance, ResultType.class);
         }
     }

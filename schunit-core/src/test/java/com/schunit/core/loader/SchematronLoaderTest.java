@@ -17,7 +17,7 @@
 package com.schunit.core.loader;
 
 import com.schunit.core.api.Schematron;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
@@ -34,7 +34,7 @@ public class SchematronLoaderTest {
     private SchematronLoader loader;
 
     @Test
-    public void simple() throws SchunitException, IOException {
+    public void simple() throws SchUnitException, IOException {
         Schematron schematron = loader.load(Paths.get("src/test/resources/project/simple/sch/SCH-001.sch"));
 
         Assert.assertNotNull(schematron);

@@ -16,7 +16,7 @@
 
 package com.schunit.core;
 
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Result;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,11 +25,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class SchunitClientTest {
+public class SchUnitClientTest {
 
     @Test
-    public void simple() throws SchunitException, IOException {
-        try (SchunitClient client = SchunitClient.newInstance(Paths.get("src/test/resources/project/simple"))) {
+    public void simple() throws SchUnitException, IOException {
+        try (SchUnitClient client = SchUnitClient.newInstance()) {
             client.schematron(Paths.get("src/test/resources/project/simple/sch"));
 
             List<Result> tests = client.test(Paths.get("src/test/resources/project/simple/test"));
@@ -45,8 +45,8 @@ public class SchunitClientTest {
     }
 
     @Test
-    public void simple2() throws SchunitException, IOException {
-        try (SchunitClient client = SchunitClient.newInstance(Paths.get("src/test/resources/config/simple2"))) {
+    public void simple2() throws SchUnitException, IOException {
+        try (SchUnitClient client = SchUnitClient.newInstance()) {
             client.schematron(Paths.get("src/test/resources/config/simple2/main.sch"));
             client.test(Paths.get("src/test/resources/config/simple2/test"));
         }

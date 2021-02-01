@@ -19,7 +19,7 @@ package com.schunit.core.repository;
 import com.schunit.core.api.Schematron;
 import com.schunit.core.api.Test;
 import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.loader.SchematronLoader;
 import com.schunit.core.model.Content;
 import com.schunit.core.model.Result;
@@ -47,11 +47,11 @@ public class SchematronRepository implements AutoCloseable {
      */
     private final List<Schematron> instances = new ArrayList<>();
 
-    public void load(Path path) throws SchunitException {
+    public void load(Path path) throws SchUnitException {
         instances.add(loader.load(path));
     }
 
-    public List<Result> validate(List<Test> tests) throws SchunitException {
+    public List<Result> validate(List<Test> tests) throws SchUnitException {
         List<Result> results = new ArrayList<>();
 
         for (Test test : tests)
@@ -60,7 +60,7 @@ public class SchematronRepository implements AutoCloseable {
         return results;
     }
 
-    public Result validate(Test test) throws SchunitException {
+    public Result validate(Test test) throws SchUnitException {
         return test.process(forTest(test).validate(test.getContent()));
     }
 
@@ -112,7 +112,7 @@ public class SchematronRepository implements AutoCloseable {
         }
 
         @Override
-        public ResultType validate(Content content) throws SchunitException {
+        public ResultType validate(Content content) throws SchUnitException {
             ResultType resultType = new ResultType();
 
             for (Schematron schematron : schematrons)

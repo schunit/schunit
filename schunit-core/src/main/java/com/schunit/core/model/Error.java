@@ -19,10 +19,16 @@ package com.schunit.core.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * A single error detected as part of testing.
+ */
 @Getter
 @AllArgsConstructor
 public class Error {
 
+    /**
+     * Error types.
+     */
     public enum Type {
         UNKNOWN_ID,
         UNEXPECTED_TRIGGER,
@@ -31,12 +37,24 @@ public class Error {
         EXPECTED_SUCCESS,
     }
 
+    /**
+     * Error type.
+     */
     private final Type type;
 
+    /**
+     * Identifier of the validation rule causing the error.
+     */
     private final String id;
 
+    /**
+     * The validation rule message if available.
+     */
     private final String message;
 
+    /**
+     * The amount of times this error occurs.
+     */
     private final Integer count;
 
 }

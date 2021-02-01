@@ -17,18 +17,21 @@
 package com.schunit.core.api;
 
 import com.schunit.core.jaxb.v1.internal.ResultType;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Representation of Schematron instance.
+ */
 public interface Schematron {
 
     Path getPath();
 
     List<String> getRules();
 
-    ResultType validate(Content content) throws SchunitException;
+    ResultType validate(Content content) throws SchUnitException;
 
 }

@@ -23,6 +23,9 @@ import com.schunit.core.model.Result;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Representation of test instance.
+ */
 public interface Test {
 
     Path getPath();

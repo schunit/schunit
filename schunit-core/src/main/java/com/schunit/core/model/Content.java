@@ -17,7 +17,7 @@
 package com.schunit.core.model;
 
 import com.google.common.io.ByteStreams;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.util.JaxbInstance;
 
 import javax.xml.transform.Source;
@@ -75,6 +75,11 @@ public class Content {
         this.bytes = bytes;
     }
 
+    /**
+     * Make content available as a stream.
+     *
+     * @return Content as stream.
+     */
     public InputStream asStream() {
         return new ByteArrayInputStream(bytes);
     }
@@ -83,7 +88,7 @@ public class Content {
         return new StreamSource(asStream());
     }
 
-    public <T> T as(JaxbInstance jaxbInstance, Class<T> cls) throws SchunitException {
+    public <T> T as(JaxbInstance jaxbInstance, Class<T> cls) throws SchUnitException {
         return jaxbInstance.unmarshal(this, cls);
     }
 

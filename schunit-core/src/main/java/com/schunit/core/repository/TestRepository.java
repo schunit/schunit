@@ -17,7 +17,7 @@
 package com.schunit.core.repository;
 
 import com.schunit.core.api.Test;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.loader.TestLoader;
 import lombok.Getter;
 
@@ -48,9 +48,9 @@ public class TestRepository implements AutoCloseable {
      *
      * @param path Path to file containing test(s).
      * @return Loaded test instances.
-     * @throws SchunitException Exceptions related to loading of test instance(s).
+     * @throws SchUnitException Exceptions related to loading of test instance(s).
      */
-    public List<Test> load(Path path) throws SchunitException {
+    public List<Test> load(Path path) throws SchUnitException {
         List<Test> result = loader.load(path);
 
         instances.addAll(result);

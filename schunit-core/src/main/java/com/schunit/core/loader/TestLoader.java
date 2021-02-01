@@ -21,7 +21,7 @@ import com.google.inject.Singleton;
 import com.schunit.core.api.Test;
 import com.schunit.core.jaxb.v1.TestType;
 import com.schunit.core.jaxb.v1.TestsType;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 import com.schunit.core.util.JaxbInstance;
 import com.schunit.core.util.SaxonHelper;
@@ -35,9 +35,11 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This loader performs all loading of test instances.
+ */
 @Singleton
 public class TestLoader {
 
@@ -51,7 +53,7 @@ public class TestLoader {
     private JaxbInstance jaxbInstance;
 
     @Inject
-    public void init() throws SchunitException {
+    public void init() throws SchUnitException {
         // Loading JAXB context
         jaxbInstance = JaxbInstance.of(TestsType.class);
 
@@ -61,7 +63,7 @@ public class TestLoader {
                 "/xslt/schunit/test-prepare.xslt");
     }
 
-    public List<Test> load(Path path) throws SchunitException {
+    public List<Test> load(Path path) throws SchUnitException {
         String context = path.toFile().getName().split("\\.(?=[^\\.]+$)")[0];
 
         TestsType tests = processor.process(path, ImmutableMap.of("context", context)).as(jaxbInstance, TestsType.class);
@@ -75,14 +77,14 @@ public class TestLoader {
         return result;
     }
 
-    private Content extractXml(TestType source) throws SchunitException {
+    private Content extractXml(TestType source) throws SchUnitException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
         try {
             Transformer transformer = TRANSFORMER_FACTORY.newTransformer();
             transformer.transform(new DOMSource((org.w3c.dom.Node) source.getAny()), new StreamResult(baos));
         } catch (Exception e) {
-            throw new SchunitException(e);
+            throw new SchUnitException(e);
         }
 
         return Content.of(baos);

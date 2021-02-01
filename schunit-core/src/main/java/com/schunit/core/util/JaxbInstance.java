@@ -16,23 +16,22 @@
 
 package com.schunit.core.util;
 
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 public class JaxbInstance {
 
     private final JAXBContext jaxbContext;
 
-    public static JaxbInstance of(Class<?>... classes) throws SchunitException {
+    public static JaxbInstance of(Class<?>... classes) throws SchUnitException {
         try {
             return new JaxbInstance(JAXBContext.newInstance(classes));
         } catch (JAXBException e) {
-            throw new SchunitException("Unable to load JAXB context.");
+            throw new SchUnitException("Unable to load JAXB context.", e);
         }
     }
 
@@ -40,27 +39,19 @@ public class JaxbInstance {
         this.jaxbContext = jaxbContext;
     }
 
-    public Unmarshaller unmarshaller() throws SchunitException {
+    public Unmarshaller unmarshaller() throws SchUnitException {
         try {
             return jaxbContext.createUnmarshaller();
         } catch (JAXBException e) {
-            throw new SchunitException(e);
+            throw new SchUnitException(e);
         }
     }
 
-    public <T> T unmarshal(Content content, Class<T> cls) throws SchunitException {
+    public <T> T unmarshal(Content content, Class<T> cls) throws SchUnitException {
         try {
             return unmarshaller().unmarshal(content.asSource(), cls).getValue();
         } catch (JAXBException e) {
-            throw new SchunitException(e);
-        }
-    }
-
-    public Marshaller marshaller() throws SchunitException {
-        try {
-            return jaxbContext.createMarshaller();
-        } catch (JAXBException e) {
-            throw new SchunitException(e);
+            throw new SchUnitException(e);
         }
     }
 }

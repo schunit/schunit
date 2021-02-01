@@ -16,7 +16,7 @@
 
 package com.schunit.core.util;
 
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.model.Content;
 import net.sf.saxon.s9api.*;
 
@@ -48,23 +48,23 @@ public class XsltProcessor {
         return new XsltProcessor(processor, executables);
     }
 
-    public Content process(Path path) throws SchunitException {
+    public Content process(Path path) throws SchUnitException {
         return process(path, Collections.emptyMap());
     }
 
-    public Content process(Path path, Map<String, String> parameters) throws SchunitException {
+    public Content process(Path path, Map<String, String> parameters) throws SchUnitException {
         return process(new StreamSource(path.toFile()), parameters);
     }
 
-    public Content process(Content content) throws SchunitException {
+    public Content process(Content content) throws SchUnitException {
         return process(content.asSource(), Collections.emptyMap());
     }
 
-    public Content process(Content content, Map<String, String> parameters) throws SchunitException {
+    public Content process(Content content, Map<String, String> parameters) throws SchUnitException {
         return process(content.asSource(), parameters);
     }
 
-    private Content process(Source source, Map<String, String> parameters) throws SchunitException {
+    private Content process(Source source, Map<String, String> parameters) throws SchUnitException {
         List<XsltTransformer> xsltTransformers = executables.stream()
                 .map(XsltExecutable::load)
                 .collect(Collectors.toList());
@@ -87,7 +87,7 @@ public class XsltProcessor {
         try {
             xsltTransformers.get(0).transform();
         } catch (SaxonApiException e) {
-            throw new SchunitException(e);
+            throw new SchUnitException(e);
         }
 
         return Content.of(baos);

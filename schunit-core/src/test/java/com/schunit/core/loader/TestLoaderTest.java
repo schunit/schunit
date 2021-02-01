@@ -16,7 +16,7 @@
 
 package com.schunit.core.loader;
 
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
@@ -32,7 +32,7 @@ public class TestLoaderTest {
     private TestLoader loader;
 
     @Test
-    public void simple() throws SchunitException {
+    public void simple() throws SchUnitException {
         List<com.schunit.core.api.Test> tests = loader.load(Paths.get("src/test/resources/project/simple/unit/TEST-R001.xml"));
 
         Assert.assertEquals(tests.size(), 2);

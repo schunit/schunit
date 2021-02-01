@@ -16,17 +16,20 @@
 
 package com.schunit.core.lang;
 
-public class SchunitException extends Exception {
+/**
+ * Exception used to map other exceptions when using the SchUnit library.
+ */
+public class SchUnitException extends Exception {
 
-    public SchunitException(String s) {
+    public SchUnitException(String s) {
         super(s);
     }
 
-    public SchunitException(String s, Throwable throwable) {
+    public SchUnitException(String s, Throwable throwable) {
         super(s, throwable);
     }
 
-    public SchunitException(Throwable throwable) {
+    public SchUnitException(Throwable throwable) {
         super(throwable);
     }
 }

@@ -32,15 +32,30 @@ import lombok.Getter;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Test instance.
+ */
 class TestInstance implements Test {
 
+    /**
+     * The path to the test (set) file.
+     */
     @Getter
     private final Path path;
 
+    /**
+     * Internal identifier of the test in a test set.
+     */
     private final String id;
 
+    /**
+     * Test description as made available in the test.
+     */
     private final String description;
 
+    /**
+     * Scope, basically rule identifiers, to limit the test to.
+     */
     @Getter
     private final List<String> scope;
 
@@ -50,6 +65,9 @@ class TestInstance implements Test {
 
     private final boolean ignoreSuccess;
 
+    /**
+     * The content to validate when running the test.
+     */
     @Getter
     private final Content content;
 

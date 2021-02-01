@@ -17,7 +17,7 @@
 package com.schunit.core.util;
 
 import com.google.inject.Singleton;
-import com.schunit.core.lang.SchunitException;
+import com.schunit.core.lang.SchUnitException;
 import net.sf.saxon.s9api.Processor;
 import net.sf.saxon.s9api.SaxonApiException;
 import net.sf.saxon.s9api.XsltCompiler;
@@ -37,31 +37,31 @@ public class SaxonHelper {
 
     private final Processor processor = new Processor(false);
 
-    public XsltProcessor loadProcessor(String... resources) throws SchunitException {
+    public XsltProcessor loadProcessor(String... resources) throws SchUnitException {
         return loadProcessor(Arrays.stream(resources)
                 .map(getClass()::getResourceAsStream)
                 .map(StreamSource::new)
                 .collect(Collectors.toList()));
     }
 
-    public XsltProcessor loadProcessor(InputStream... inputStreams) throws SchunitException {
+    public XsltProcessor loadProcessor(InputStream... inputStreams) throws SchUnitException {
         return loadProcessor(Arrays.stream(inputStreams)
                 .map(StreamSource::new)
                 .collect(Collectors.toList()));
     }
 
-    public XsltProcessor loadProcessor(Path... paths) throws SchunitException {
+    public XsltProcessor loadProcessor(Path... paths) throws SchUnitException {
         return loadProcessor(Arrays.stream(paths)
                 .map(Path::toFile)
                 .map(StreamSource::new)
                 .collect(Collectors.toList()));
     }
 
-    public XsltProcessor loadProcessor(Source... sources) throws SchunitException {
+    public XsltProcessor loadProcessor(Source... sources) throws SchUnitException {
         return loadProcessor(Arrays.asList(sources));
     }
 
-    private XsltProcessor loadProcessor(List<Source> sources) throws SchunitException {
+    private XsltProcessor loadProcessor(List<Source> sources) throws SchUnitException {
         try {
             List<XsltExecutable> executables = new ArrayList<>();
 
@@ -72,7 +72,7 @@ public class SaxonHelper {
 
             return new XsltProcessor(processor, executables);
         } catch (SaxonApiException e) {
-            throw new SchunitException(e);
+            throw new SchUnitException(e);
         }
     }
 }

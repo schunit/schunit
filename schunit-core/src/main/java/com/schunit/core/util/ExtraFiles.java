@@ -28,14 +28,24 @@ import java.util.stream.Collectors;
  */
 public interface ExtraFiles {
 
+    /**
+     * Expand path to list of file in the directory when provided a directory,
+     * otherwise return singleton list of the path.
+     *
+     * @param path Path to be expanded.
+     * @return List of paths.
+     * @throws IOException Indicates problems related to IO.
+     */
     static List<Path> expand(Path path) throws IOException {
         if (Files.isRegularFile(path)) {
             return Collections.singletonList(path);
-        } else {
+        } else if (Files.isDirectory(path)) {
             return Files.list(path)
                     .filter(Files::isRegularFile)
                     .sorted()
                     .collect(Collectors.toList());
+        } else {
+            throw new IOException(String.format("Path '%s' not found.", path));
         }
     }
 }
