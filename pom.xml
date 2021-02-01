@@ -15,14 +15,13 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.schunit</groupId>
     <artifactId>schunit</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.2.0</version>
     <modules>
         <module>schunit-core</module>
         <module>schunit-cli</module>
@@ -37,7 +36,7 @@
         <connection>scm:git:git@github.com:schunit/schunit.git</connection>
         <url>scm:git:git@github.com:schunit/schunit.git</url>
         <developerConnection>scm:git:git@github.com:schunit/schunit.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v0.2.0</tag>
     </scm>
 
     <dependencies>
@@ -67,7 +66,7 @@
             <dependency>
                 <groupId>com.schunit</groupId>
                 <artifactId>schunit-core</artifactId>
-                <version>0.1.1-SNAPSHOT</version>
+                <version>0.2.0</version>
             </dependency>
 
             <!-- Saxon -->
