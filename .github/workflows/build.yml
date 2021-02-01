@@ -24,6 +24,9 @@ jobs:
       - name: Build application
         run: make build
 
+      - name: Docker image
+        run: make docker
+
       - name: Set version
         if: startsWith(github.ref, 'refs/tags/')
         env:
