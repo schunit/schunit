@@ -37,7 +37,7 @@
     <files>
         <file>
             <source>../COPYING</source>
-            <outputDirectory></outputDirectory>
+            <outputDirectory/>
         </file>
     </files>
     <dependencySets>
