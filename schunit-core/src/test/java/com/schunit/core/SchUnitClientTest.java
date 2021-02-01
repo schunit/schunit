@@ -35,7 +35,6 @@ public class SchUnitClientTest {
             List<Result> tests = client.test(Paths.get("src/test/resources/project/simple/test"));
             Assert.assertNotNull(tests);
             Assert.assertEquals(tests.size(), 1);
-
             Assert.assertEquals(tests.get(0).getErrors().size(), 0);
 
             List<Result> units = client.test(Paths.get("src/test/resources/project/simple/unit"));

@@ -102,7 +102,7 @@ class TestInstance implements Test {
             }
 
             // Are we working with a defined scope?
-            if (scope.size() == 0 || !scope.contains(at.getId()))
+            if (scope.size() != 0 && !scope.contains(at.getId()))
                 continue; //
 
             // Handle successes
