@@ -33,6 +33,24 @@ jobs:
           REF: ${{ github.ref }}
         run: echo "VERSION=$(echo $REF | sed 's:refs/tags/v::' )" >> $GITHUB_ENV
 
+      - name: Upload cli distribution (tar.gz)
+        uses: klakegg/github-upload@v0.9.1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: schunit-cli/target/schunit-cli-${VERSION}-dist.tar.gz
+          label: SchUnit Cli (tar.gz)
+
+      - name: Upload cli distribution (zip)
+        uses: klakegg/github-upload@v0.9.1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: schunit-cli/target/schunit-cli-${VERSION}-dist.zip
+          label: SchUnit Cli (zip)
+
       - name: Upload core distribution (tar.gz)
         uses: klakegg/github-upload@v0.9.1
         if: startsWith(github.ref, 'refs/tags/')
