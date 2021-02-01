@@ -1,8 +1,5 @@
 build:
-	@mvn -B --no-transfer-progress clean package -P dist
-
-javadoc:
-	@mvn -B --no-transfer-progress javadoc:javadoc
+	@mvn -B --no-transfer-progress clean package javadoc:javadoc -P dist
 
 release:
 	@mvn release:prepare
