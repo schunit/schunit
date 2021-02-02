@@ -17,6 +17,7 @@
 package com.schunit.cli.runner;
 
 import com.schunit.cli.api.Runner;
+import com.schunit.cli.model.Config;
 import com.schunit.cli.model.Plan;
 import com.schunit.core.SchUnitClient;
 import com.schunit.core.lang.SchUnitException;
@@ -32,9 +33,15 @@ import java.util.List;
 @Slf4j
 public class DefaultRunner implements Runner {
 
+    private Config config;
+
     private int tests = 0;
 
     private int errors = 0;
+
+    public DefaultRunner(Config config) {
+        this.config = config;
+    }
 
     @Override
     public int execute(Plan plan) {
@@ -77,7 +84,8 @@ public class DefaultRunner implements Runner {
             tests++;
 
             if (result.getErrors().size() == 0) {
-                log.info("  Test {} #{}", result.getPath(), result.getId());
+                if (config.isVerbose())
+                    log.info("  Test {} #{}", result.getPath(), result.getId());
             } else {
                 errors++;
 

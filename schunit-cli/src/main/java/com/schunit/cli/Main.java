@@ -17,8 +17,10 @@
 package com.schunit.cli;
 
 import com.schunit.cli.api.Runner;
+import com.schunit.cli.model.Config;
 import com.schunit.cli.model.Plan;
 import com.schunit.cli.runner.DefaultRunner;
+import com.schunit.core.SchUnitClient;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.cli.*;
 
@@ -39,10 +41,18 @@ public class Main {
                         .desc("Schematron file/folder")
                         .hasArgs()
                         .build())
+                .addOption(Option.builder("v")
+                        .longOpt("verbose")
+                        .desc("Verbose")
+                        .build())
                 .addOption(Option.builder("t")
                         .longOpt("test")
                         .desc("Test file/folder")
                         .hasArgs()
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("version")
+                        .desc("Display version")
                         .build());
 
         // Parse arguments
@@ -50,11 +60,21 @@ public class Main {
         CommandLine cmd = parser.parse(options, args);
 
         // Print help if requested
-        if (cmd.hasOption("h")) {
+        if (cmd.hasOption("help")) {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("schunit", options);
             return;
         }
+
+        // Print version information
+        if (cmd.hasOption("version")) {
+            System.out.printf("SchUnit %s%n", SchUnitClient.version());
+            return;
+        }
+
+        // Create config
+        Config config = new Config();
+        config.setVerbose(cmd.hasOption("verbose"));
 
         // Create plan
         Plan plan = new Plan(null);
@@ -62,7 +82,7 @@ public class Main {
         plan.addTest(cmd.getOptionValues("t"));
 
         // Create runner and execute plan
-        Runner runner = new DefaultRunner();
+        Runner runner = new DefaultRunner(config);
         System.exit(runner.execute(plan));
     }
 }

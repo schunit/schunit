@@ -31,6 +31,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * SchUnit client.
@@ -149,6 +150,17 @@ public class SchUnitClient implements AutoCloseable {
             throw new SchUnitException("Not supported in basic mode.");
 
         return schematronRepository.validate(testRepository.getInstances());
+    }
+
+    public static String version() {
+        try {
+            Properties prop = new Properties();
+            prop.load(SchUnitClient.class.getClassLoader().getResourceAsStream("version.properties"));
+
+            return prop.getProperty("version");
+        } catch (IOException e) {
+            return "Unknown";
+        }
     }
 
     /**
