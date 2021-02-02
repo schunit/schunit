@@ -103,7 +103,7 @@ class TestInstance implements Test {
 
             // Are we working with a defined scope?
             if (scope.size() != 0 && !scope.contains(at.getId()))
-                continue; //
+                continue;
 
             // Handle successes
             if (StatusType.SUCCESS.equals(at.getStatus())) {

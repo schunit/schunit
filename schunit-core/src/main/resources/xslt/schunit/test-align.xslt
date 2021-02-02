@@ -95,9 +95,7 @@
 
     <xsl:template match="vefa:success" mode="vefa">
         <Success>
-            <xsl:if test="@number">
-                <xsl:attribute name="count" select="@number"/>
-            </xsl:if>
+            <xsl:attribute name="count" select="if (@number) then @number else -1"/>
             <xsl:value-of select="text()"/>
         </Success>
     </xsl:template>

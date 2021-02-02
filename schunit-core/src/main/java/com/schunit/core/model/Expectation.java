@@ -52,7 +52,9 @@ public class Expectation {
             if (registry.get(id) > 0)
                 // Expected
                 registry.put(id, registry.get(id) - 1);
-            else
+            else if (registry.get(id) < 0) {
+                // Ignore
+            } else
                 // Expected but not this many times
                 result.addError(errorType, id, message);
         } else
@@ -62,7 +64,7 @@ public class Expectation {
 
     public void finish(Error.Type errorType) {
         for (String id : registry.keySet())
-            if (registry.get(id) != 0)
+            if (registry.get(id) > 0)
                 // Expected but not seen
                 result.addError(errorType, id, null, registry.get(id));
     }
