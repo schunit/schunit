@@ -17,7 +17,7 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                xmlns="urn:fdc:schunit.com:2018:v1:internal"
+                xmlns="urn:fdc:schunit.com:2020:v1:internal"
                 exclude-result-prefixes="sch"
                 version="2.0">
 

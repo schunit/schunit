@@ -16,9 +16,9 @@
   -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-                xmlns:t="urn:fdc:schunit.com:2018:v1"
+                xmlns:t="urn:fdc:schunit.com:2020:v1"
                 xmlns:vefa="http://difi.no/xsd/vefa/validator/1.0"
-                xmlns="urn:fdc:schunit.com:2018:v1"
+                xmlns="urn:fdc:schunit.com:2020:v1"
                 exclude-result-prefixes="t vefa">
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />

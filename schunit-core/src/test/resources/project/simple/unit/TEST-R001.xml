@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<Tests xmlns="urn:fdc:schunit.com:2018:v1">
+<Tests xmlns="urn:fdc:schunit.com:2020:v1">
     <Description>Verify existence of header in document.</Description>
     <Scope/>
 

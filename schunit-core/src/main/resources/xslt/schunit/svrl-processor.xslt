@@ -17,7 +17,7 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                xmlns="urn:fdc:schunit.com:2018:v1:internal"
+                xmlns="urn:fdc:schunit.com:2020:v1:internal"
                 exclude-result-prefixes="svrl">
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>

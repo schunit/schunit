@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 
-<Test xmlns="urn:fdc:schunit.com:2018:v1">
+<Test xmlns="urn:fdc:schunit.com:2020:v1">
     <Scope/>
     <Success/>
 

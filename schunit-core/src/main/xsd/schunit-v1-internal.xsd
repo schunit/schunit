@@ -16,7 +16,7 @@
   -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-           targetNamespace="urn:fdc:schunit.com:2018:v1:internal" xmlns="urn:fdc:schunit.com:2018:v1:internal">
+           targetNamespace="urn:fdc:schunit.com:2020:v1:internal" xmlns="urn:fdc:schunit.com:2020:v1:internal">
 
     <!-- Extract -->
 

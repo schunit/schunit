@@ -1,4 +1,2 @@
 schematron: main.sch
 test: test
-properties:
-  perform: true
