@@ -21,7 +21,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Config {
+public class Properties {
 
     private boolean verbose = false;
 

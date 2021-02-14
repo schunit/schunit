@@ -1,0 +1,5 @@
+name: Simple Project
+schematron: sch
+test:
+  - test
+  - unit

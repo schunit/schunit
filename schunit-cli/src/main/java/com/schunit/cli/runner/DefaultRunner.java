@@ -17,7 +17,7 @@
 package com.schunit.cli.runner;
 
 import com.schunit.cli.api.Runner;
-import com.schunit.cli.model.Config;
+import com.schunit.cli.model.Properties;
 import com.schunit.cli.model.Plan;
 import com.schunit.core.SchUnitClient;
 import com.schunit.core.lang.SchUnitException;
@@ -33,19 +33,23 @@ import java.util.List;
 @Slf4j
 public class DefaultRunner implements Runner {
 
-    private Config config;
+    private final Properties properties;
 
-    private int tests = 0;
+    private int tests;
 
-    private int errors = 0;
+    private int errors;
 
-    public DefaultRunner(Config config) {
-        this.config = config;
+    public DefaultRunner(Properties properties) {
+        this.properties = properties;
     }
 
     @Override
     public int execute(Plan plan) {
-        log.info("Project: {}", plan.getProject() != null ? plan.getProject() : "Current");
+        log.info("Project: {}", plan.getName());
+
+        // Reset counters
+        tests = 0;
+        errors = 0;
 
         try (SchUnitClient client = SchUnitClient.newInstance()) {
             for (Path s : plan.getSchematrons()) {
@@ -84,7 +88,7 @@ public class DefaultRunner implements Runner {
             tests++;
 
             if (result.getErrors().size() == 0) {
-                if (config.isVerbose())
+                if (properties.isVerbose())
                     log.info("  Test {} #{}", result.getPath(), result.getId());
             } else {
                 errors++;

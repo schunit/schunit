@@ -30,14 +30,14 @@ public class SchUnitClientTest {
     @Test
     public void simple() throws SchUnitException, IOException {
         try (SchUnitClient client = SchUnitClient.newInstance()) {
-            client.schematron(Paths.get("src/test/resources/project/simple/sch"));
+            client.schematron("src/test/resources/project/simple/sch");
 
-            List<Result> tests = client.test(Paths.get("src/test/resources/project/simple/test"));
+            List<Result> tests = client.test("src/test/resources/project/simple/test");
             Assert.assertNotNull(tests);
             Assert.assertEquals(tests.size(), 1);
             Assert.assertEquals(tests.get(0).getErrors().size(), 0);
 
-            List<Result> units = client.test(Paths.get("src/test/resources/project/simple/unit"));
+            List<Result> units = client.test("src/test/resources/project/simple/unit");
             Assert.assertNotNull(units);
             Assert.assertEquals(units.size(), 5);
         }
@@ -46,8 +46,8 @@ public class SchUnitClientTest {
     @Test
     public void simple2() throws SchUnitException, IOException {
         try (SchUnitClient client = SchUnitClient.newInstance()) {
-            client.schematron(Paths.get("src/test/resources/config/simple2/main.sch"));
-            client.test(Paths.get("src/test/resources/config/simple2/test"));
+            client.schematron("src/test/resources/config/simple2/main.sch");
+            client.test("src/test/resources/config/simple2/test");
         }
     }
 }

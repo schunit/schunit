@@ -18,7 +18,18 @@ package com.schunit.cli.api;
 
 import com.schunit.cli.model.Plan;
 
+import java.util.List;
+
 public interface Runner {
+
+    default int execute(List<Plan> plans) {
+        int result = 0;
+
+        for (Plan plan : plans)
+            result = Integer.max(result, execute(plan));
+
+        return result;
+    }
 
     int execute(Plan plan);
 

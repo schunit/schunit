@@ -43,6 +43,12 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
+        <!-- YAML -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
         <!-- Apache Commons -->
         <dependency>
             <groupId>commons-cli</groupId>

@@ -17,6 +17,7 @@
 package com.schunit.cli.model;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,6 +26,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Plan {
+
+    @Setter
+    private String name;
 
     @Getter
     private final List<Path> schematrons = new ArrayList<>();
@@ -39,6 +43,10 @@ public class Plan {
         this.project = project;
     }
 
+    public String getName() {
+        return name != null ? name : (project != null ? project.toString() : "Current");
+    }
+
     public void addSchematron(String... paths) {
         if (paths != null)
             addSchematron(Arrays.stream(paths).map(Paths::get).toArray(Path[]::new));
@@ -46,7 +54,15 @@ public class Plan {
 
     public void addSchematron(Path... paths) {
         if (paths != null)
-            schematrons.addAll(Arrays.asList(paths));
+            addSchematron(Arrays.asList(paths));
+    }
+
+    public void addSchematron(List<Path> paths) {
+        for (Path path : paths)
+            if (project == null)
+                schematrons.add(path);
+            else
+                schematrons.add(project.resolve(path));
     }
 
     public void addTest(String... paths) {
@@ -56,7 +72,14 @@ public class Plan {
 
     public void addTest(Path... paths) {
         if (paths != null)
-            tests.addAll(Arrays.asList(paths));
+            addTest(Arrays.asList(paths));
     }
 
+    public void addTest(List<Path> paths) {
+        for (Path path : paths)
+            if (project == null)
+                tests.add(path);
+            else
+                tests.add(project.resolve(path));
+    }
 }

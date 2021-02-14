@@ -17,24 +17,32 @@
 package com.schunit.cli;
 
 import com.schunit.cli.api.Runner;
-import com.schunit.cli.model.Config;
+import com.schunit.cli.loader.ConfigLoader;
 import com.schunit.cli.model.Plan;
+import com.schunit.cli.model.Properties;
 import com.schunit.cli.runner.DefaultRunner;
 import com.schunit.core.SchUnitClient;
+import com.schunit.core.lang.SchUnitException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.cli.*;
+
+import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 public class Main {
 
     public static void main(String... args) throws ParseException {
-        // log.info("Args: {}", Arrays.toString(args));
-
         // Define cli arguments
         Options options = new Options()
                 .addOption(Option.builder("h")
                         .longOpt("help")
                         .desc("View help")
+                        .build())
+                .addOption(Option.builder("r")
+                        .longOpt("recursive")
+                        .desc("Look for .schunit.yaml recursively")
                         .build())
                 .addOption(Option.builder("s")
                         .longOpt("schematron")
@@ -72,17 +80,45 @@ public class Main {
             return;
         }
 
+        try {
+            System.exit(run(cmd));
+        } catch (SchUnitException e) {
+            log.error(e.getMessage());
+            System.exit(2);
+        }
+    }
+
+    public static int run(CommandLine cmd) throws SchUnitException {
         // Create config
-        Config config = new Config();
-        config.setVerbose(cmd.hasOption("verbose"));
+        Properties properties = new Properties();
+        properties.setVerbose(cmd.hasOption("verbose"));
 
-        // Create plan
-        Plan plan = new Plan(null);
-        plan.addSchematron(cmd.getOptionValues("s"));
-        plan.addTest(cmd.getOptionValues("t"));
+        // Load plans
+        List<Plan> plans;
 
-        // Create runner and execute plan
-        Runner runner = new DefaultRunner(config);
-        System.exit(runner.execute(plan));
+        if (cmd.hasOption("r")) {
+            // Detect and load all .schunit.yaml files recursively
+            plans = ConfigLoader.recursiveLoad(Paths.get(""));
+        } else {
+            if (cmd.hasOption("s")) {
+                // Schematron is set, to make a plan based on arguments.
+                Plan plan = new Plan(null);
+                plan.addSchematron(cmd.getOptionValues("s"));
+                plan.addTest(cmd.getOptionValues("t"));
+
+                plans = Collections.singletonList(plan);
+            } else {
+                // Load .schunit.yaml found in current folder
+                plans = ConfigLoader.load(Paths.get(ConfigLoader.FILENAME));
+            }
+        }
+
+        // Make sure loading was successful
+        if (plans.isEmpty())
+            throw new SchUnitException("Found no configuration.");
+
+        // Create and execute runner
+        Runner runner = new DefaultRunner(properties);
+        return runner.execute(plans);
     }
 }

@@ -18,6 +18,7 @@ package com.schunit.core;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.schunit.core.api.Client;
 import com.schunit.core.lang.SchUnitException;
 import com.schunit.core.loader.TestLoader;
 import com.schunit.core.model.Result;
@@ -36,7 +37,7 @@ import java.util.Properties;
 /**
  * SchUnit client.
  */
-public class SchUnitClient implements AutoCloseable {
+public class SchUnitClient implements Client {
 
     /**
      * Guice injector.
@@ -104,6 +105,7 @@ public class SchUnitClient implements AutoCloseable {
      * @throws SchUnitException Exceptions related to loading of Schematron instance(s).
      * @throws IOException      Exceptions related to IO.
      */
+    @Override
     public List<Result> schematron(Path path) throws SchUnitException, IOException {
         for (Path p : ExtraFiles.expand(path))
             schematronRepository.load(p);
@@ -122,6 +124,7 @@ public class SchUnitClient implements AutoCloseable {
      * @throws SchUnitException Exceptions related to loading of test instance(s).
      * @throws IOException      Exceptions related to IO.
      */
+    @Override
     public List<Result> test(Path path) throws SchUnitException, IOException {
         List<Result> results = new ArrayList<>();
 
@@ -145,6 +148,7 @@ public class SchUnitClient implements AutoCloseable {
      * @return Test results.
      * @throws SchUnitException Exceptions related to validation and verification of test instance(s).
      */
+    @Override
     public List<Result> verify() throws SchUnitException {
         if (mode.equals(Mode.BASIC))
             throw new SchUnitException("Not supported in basic mode.");
