@@ -21,7 +21,7 @@
     <groupId>com.schunit</groupId>
     <artifactId>schunit</artifactId>
     <packaging>pom</packaging>
-    <version>0.3.0</version>
+    <version>0.3.1-SNAPSHOT</version>
     <modules>
         <module>schunit-core</module>
         <module>schunit-cli</module>
@@ -36,7 +36,7 @@
         <connection>scm:git:git@github.com:schunit/schunit.git</connection>
         <url>scm:git:git@github.com:schunit/schunit.git</url>
         <developerConnection>scm:git:git@github.com:schunit/schunit.git</developerConnection>
-        <tag>v0.3.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
@@ -66,7 +66,7 @@
             <dependency>
                 <groupId>com.schunit</groupId>
                 <artifactId>schunit-core</artifactId>
-                <version>0.3.0</version>
+                <version>0.3.1-SNAPSHOT</version>
             </dependency>
 
             <!-- Saxon -->
