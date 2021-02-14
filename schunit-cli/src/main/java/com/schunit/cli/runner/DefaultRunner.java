@@ -55,7 +55,7 @@ public class DefaultRunner implements Runner {
             for (Path s : plan.getSchematrons()) {
                 for (Path p : ExtraFiles.expand(s)) {
                     try {
-                        log.info("  Loading {}", p);
+                        log.info("  Loading {}", plan.subpath(p));
                         client.schematron(p);
                     } catch (SchUnitException e) {
                         log.error(e.getMessage(), e);
@@ -67,7 +67,7 @@ public class DefaultRunner implements Runner {
             for (Path t : plan.getTests()) {
                 for (Path p : ExtraFiles.expand(t)) {
                     try {
-                        handleResults(client.test(p));
+                        handleResults(plan, client.test(p));
                     } catch (SchUnitException e) {
                         log.error("  Unable to handle {}: {}", p, e.getMessage());
                     }
@@ -83,13 +83,13 @@ public class DefaultRunner implements Runner {
         return errors > 0 || tests == 0 ? 1 : 0;
     }
 
-    private void handleResults(List<Result> results) {
+    private void handleResults(Plan plan, List<Result> results) {
         for (Result result : results) {
             tests++;
 
             if (result.getErrors().size() == 0) {
                 if (properties.isVerbose())
-                    log.info("  Test {} #{}", result.getPath(), result.getId());
+                    log.info("  Test {} #{}", plan.subpath(result.getPath()), result.getId());
             } else {
                 errors++;
 

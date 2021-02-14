@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 
 public class ConfigLoader {
 
-    public static final String FILENAME = ".schunit.yaml";
+    private static final String FILENAME = ".schunit.yaml";
 
     private static final Representer REPRESENTER = new Representer() {{
         getPropertyUtils().setSkipMissingProperties(true);
@@ -48,6 +48,7 @@ public class ConfigLoader {
             for (Path p : Files.walk(path)
                     .filter(Files::isRegularFile)
                     .filter(p -> FILENAME.equals(p.toFile().getName()))
+                    .map(Path::getParent)
                     .collect(Collectors.toList()))
 
                 plans.addAll(load(p));
@@ -59,13 +60,15 @@ public class ConfigLoader {
     }
 
     public static List<Plan> load(Path path) throws SchUnitException {
-        if (Files.notExists(path))
+        Path configPath = path.resolve(FILENAME);
+
+        if (Files.notExists(configPath))
             return Collections.emptyList();
 
-        try (InputStream inputStream = Files.newInputStream(path)) {
+        try (InputStream inputStream = Files.newInputStream(configPath)) {
             Map<String, Object> config = YAML.load(inputStream);
 
-            Plan plan = new Plan(path.getParent());
+            Plan plan = new Plan(path);
 
             if (config.containsKey("name"))
                 plan.setName((String) config.get("name"));
@@ -79,10 +82,12 @@ public class ConfigLoader {
             return Collections.singletonList(plan);
         } catch (IOException e) {
             throw new SchUnitException(e.getMessage(), e);
+        } catch (SchUnitException e) {
+            throw new SchUnitException(String.format("Unable to parse '%s'.", configPath), e);
         }
     }
 
-    private static List<String> parseList(Object o) {
+    private static List<String> parseList(Object o) throws SchUnitException {
         if (o == null)
             return Collections.emptyList();
         else if (o instanceof String)
@@ -90,6 +95,6 @@ public class ConfigLoader {
         else if (o instanceof List)
             return (List<String>) o;
 
-        throw new IllegalArgumentException("...");
+        throw new SchUnitException("Unable to parse property.");
     }
 }

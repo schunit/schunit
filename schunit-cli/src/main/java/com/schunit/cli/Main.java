@@ -35,10 +35,47 @@ public class Main {
 
     public static void main(String... args) throws ParseException {
         // Define cli arguments
-        Options options = new Options()
+        Options options = loadOptions();
+
+        // Parse arguments
+        CommandLine cmd = parseArgs(options, args);
+
+        // Print help if requested
+        if (cmd.hasOption("help")) {
+            HelpFormatter formatter = new HelpFormatter();
+            formatter.printHelp("schunit", options);
+            return;
+        }
+
+        // Print version information
+        if (cmd.hasOption("version")) {
+            System.out.printf("SchUnit %s%n", SchUnitClient.version());
+            return;
+        }
+
+        try {
+            System.exit(run(cmd));
+        } catch (SchUnitException e) {
+            log.error(e.getMessage());
+            System.exit(2);
+        }
+    }
+
+    public static CommandLine parseArgs(Options options, String... args) throws ParseException {
+        CommandLineParser parser = new DefaultParser();
+        return parser.parse(options, args);
+    }
+
+    public static Options loadOptions() {
+        return new Options()
                 .addOption(Option.builder("h")
                         .longOpt("help")
                         .desc("View help")
+                        .build())
+                .addOption(Option.builder("p")
+                        .longOpt("Path")
+                        .desc("Project path")
+                        .hasArg()
                         .build())
                 .addOption(Option.builder("r")
                         .longOpt("recursive")
@@ -62,30 +99,6 @@ public class Main {
                         .longOpt("version")
                         .desc("Display version")
                         .build());
-
-        // Parse arguments
-        CommandLineParser parser = new DefaultParser();
-        CommandLine cmd = parser.parse(options, args);
-
-        // Print help if requested
-        if (cmd.hasOption("help")) {
-            HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("schunit", options);
-            return;
-        }
-
-        // Print version information
-        if (cmd.hasOption("version")) {
-            System.out.printf("SchUnit %s%n", SchUnitClient.version());
-            return;
-        }
-
-        try {
-            System.exit(run(cmd));
-        } catch (SchUnitException e) {
-            log.error(e.getMessage());
-            System.exit(2);
-        }
     }
 
     public static int run(CommandLine cmd) throws SchUnitException {
@@ -98,7 +111,7 @@ public class Main {
 
         if (cmd.hasOption("r")) {
             // Detect and load all .schunit.yaml files recursively
-            plans = ConfigLoader.recursiveLoad(Paths.get(""));
+            plans = ConfigLoader.recursiveLoad(Paths.get(cmd.getOptionValue("p", "")));
         } else {
             if (cmd.hasOption("s")) {
                 // Schematron is set, to make a plan based on arguments.
@@ -109,7 +122,7 @@ public class Main {
                 plans = Collections.singletonList(plan);
             } else {
                 // Load .schunit.yaml found in current folder
-                plans = ConfigLoader.load(Paths.get(ConfigLoader.FILENAME));
+                plans = ConfigLoader.load(Paths.get(cmd.getOptionValue("p", "")));
             }
         }
 

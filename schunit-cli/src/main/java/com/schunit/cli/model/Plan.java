@@ -82,4 +82,12 @@ public class Plan {
             else
                 tests.add(project.resolve(path));
     }
+
+    public Path subpath(Path path) {
+        if (project == null)
+            return path;
+        else if (path.startsWith(path))
+            return path.subpath(project.getNameCount(), path.getNameCount());
+        return path;
+    }
 }
