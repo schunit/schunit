@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -37,6 +36,8 @@ jobs:
         run: |
           docker tag schunit/schunit:dev schunit/schunit:edge
           docker push schunit/schunit:edge
+          docker tag schunit/devcontainer:dev schunit/devcontainer:edge
+          docker push schunit/devcontainer:edge
 
       - name: Set version
         if: startsWith(github.ref, 'refs/tags/')
@@ -51,6 +52,10 @@ jobs:
           docker tag schunit/schunit:dev schunit/schunit:latest
           docker push schunit/schunit:${VERSION}
           docker push schunit/schunit:latest
+          docker tag schunit/devcontainer:dev schunit/devcontainer:${VERSION}
+          docker tag schunit/devcontainer:dev schunit/devcontainer:latest
+          docker push schunit/devcontainer:${VERSION}
+          docker push schunit/devcontainer:latest
 
       - name: Upload cli distribution (tar.gz)
         uses: klakegg/github-upload@v0.9.1
