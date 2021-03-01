@@ -17,6 +17,7 @@
 package com.schunit.core.model;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -49,6 +50,9 @@ public class Result {
      */
     private final String description;
 
+    @Setter
+    private Long runtime;
+
     /**
      * Simple initiation based upon a defined test.
      *
@@ -68,6 +72,10 @@ public class Result {
 
     public void addError(Error.Type type, String id, String message, Integer count) {
         this.errors.add(new Error(type, id, message, count));
+    }
+
+    public String getName() {
+        return String.format("%s #%s", path, id);
     }
 
     /**

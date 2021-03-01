@@ -33,9 +33,12 @@
     <xs:element name="Result" type="ResultType"/>
 
     <xs:complexType name="ResultType">
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element name="Assert" type="AssertType"/>
-        </xs:choice>
+        <xs:sequence>
+            <xs:element name="runtime" type="xs:long"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Assert" type="AssertType"/>
+            </xs:choice>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="AssertType">

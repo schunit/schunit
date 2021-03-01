@@ -115,8 +115,12 @@ public class SchematronRepository implements AutoCloseable {
         public ResultType validate(Content content) throws SchUnitException {
             ResultType resultType = new ResultType();
 
+            long ts = System.currentTimeMillis();
+
             for (Schematron schematron : schematrons)
                 resultType.getAssert().addAll(schematron.validate(content).getAssert());
+
+            resultType.setRuntime(System.currentTimeMillis() - ts);
 
             return resultType;
         }

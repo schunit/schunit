@@ -26,6 +26,7 @@ import com.schunit.core.lang.SchUnitException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.cli.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
@@ -56,7 +57,7 @@ public class Main {
         try {
             System.exit(run(cmd));
         } catch (SchUnitException e) {
-            log.error(e.getMessage());
+            log.error(e.getMessage(), e);
             System.exit(2);
         }
     }
@@ -80,6 +81,11 @@ public class Main {
                 .addOption(Option.builder("r")
                         .longOpt("recursive")
                         .desc("Look for .schunit.yaml recursively")
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("runner")
+                        .desc("Override runner")
+                        .hasArg()
                         .build())
                 .addOption(Option.builder("s")
                         .longOpt("schematron")
@@ -131,7 +137,21 @@ public class Main {
             throw new SchUnitException("Found no configuration.");
 
         // Create and execute runner
-        Runner runner = new DefaultRunner(properties);
+        Runner runner = loadRunner(cmd, properties);
         return runner.execute(plans);
+    }
+
+    private static Runner loadRunner(CommandLine cmd, Properties properties) throws SchUnitException {
+        if (cmd.hasOption("runner")) {
+            try {
+                return (Runner) Class.forName(cmd.getOptionValue("runner"))
+                        .getDeclaredConstructor(Properties.class)
+                        .newInstance(properties);
+            } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                throw new SchUnitException(String.format("Unable to load runner '%s'.", cmd.getOptionValue("runner")), e);
+            }
+        } else {
+            return new DefaultRunner(properties);
+        }
     }
 }

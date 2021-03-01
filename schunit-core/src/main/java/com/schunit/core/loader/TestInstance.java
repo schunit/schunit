@@ -87,6 +87,7 @@ class TestInstance implements Test {
     @Override
     public Result process(ResultType source) {
         Result result = new Result(path, id, description);
+        result.setRuntime(source.getRuntime());
 
         Expectation successes = new Expectation(result, expectedSuccess);
         Expectation triggers = new Expectation(result, expectedTrigger);
