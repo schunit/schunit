@@ -1,4 +1,4 @@
-FROM alpine:3.13 AS fetch
+FROM alpine:3.17 AS fetch
 
 ADD schunit-cli/target /schunit-cli
 
@@ -11,7 +11,7 @@ ADD COPYING /files/COPYING
 
 
 
-FROM adoptopenjdk:8u282-b08-jre-hotspot-focal AS schunit
+FROM eclipse-temurin:17-jre-focal AS schunit
 
 COPY --from=fetch /files /
 
